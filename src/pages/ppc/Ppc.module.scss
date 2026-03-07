@@ -1,0 +1,801 @@
+@import "../../styles/variables.scss";
+.wrapperPpcPage {
+  position: relative;
+  background: $color-white;
+}
+
+.wrapperContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $space-lg;
+
+  @media (max-width: $breakpoint-md) {
+    padding: 0 $space-md;
+  }
+}
+
+// Hero Section
+.wrapperHeroSection {
+  padding: $space-xl * 2 0;
+  background: linear-gradient(135deg, $color-gray-50 0%, $color-white 100%);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: $breakpoint-md) {
+    padding: $space-xl 0;
+    min-height: auto;
+  }
+}
+
+.wrapperHeroContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-xl;
+  align-items: center;
+
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+.wrapperHeroText {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wrapperHeroBadge {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: $primary;
+  background: rgba($primary, 0.1);
+  padding: $space-xs $space-md;
+  border-radius: 100px;
+  margin-bottom: $space-md;
+}
+
+.wrapperHeroTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  color: $color-gray-900;
+  margin-bottom: $space-sm;
+  line-height: 1.2;
+
+  @media (max-width: $breakpoint-md) {
+    font-size: 2rem;
+  }
+}
+
+.wrapperHeroSubtitle {
+  font-size: 1.25rem;
+  color: $primary;
+  margin-bottom: $space-md;
+}
+
+.wrapperHeroDescription {
+  font-size: 1rem;
+  color: $color-gray-600;
+  margin-bottom: $space-xl;
+  line-height: 1.6;
+  max-width: 500px;
+
+  @media (max-width: $breakpoint-lg) {
+    max-width: 100%;
+  }
+}
+
+.wrapperHeroStats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $space-md;
+  margin-bottom: $space-xl;
+
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.wrapperHeroStat {
+  text-align: center;
+  padding: $space-sm;
+  background: rgba($color-white, 0.8);
+  border-radius: 12px;
+  border: 1px solid $color-gray-200;
+}
+
+.wrapperStatValue {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $primary;
+}
+
+.wrapperStatLabel {
+  font-size: 0.75rem;
+  color: $color-gray-600;
+}
+
+.wrapperHeroButtons {
+  display: flex;
+  gap: $space-md;
+
+  @media (max-width: $breakpoint-lg) {
+    justify-content: center;
+  }
+}
+
+.wrapperPrimaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-xs;
+  background: $primary;
+  color: $color-white;
+  border: none;
+  padding: $space-md $space-xl;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: $secondary;
+    transform: translateY(-2px);
+    gap: $space-md;
+
+    svg {
+      transform: translateX(4px);
+    }
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+  }
+}
+
+.wrapperHeroImage {
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards 0.2s;
+}
+
+.wrapperImageCircle {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(135deg, rgba($primary, 0.1) 0%, rgba($color-purple-400, 0.1) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid $color-white;
+  box-shadow: 0 20px 40px -10px rgba($primary, 0.2);
+
+  @media (max-width: $breakpoint-md) {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.wrapperImageEmoji {
+  font-size: 6rem;
+  animation: bounce 3s ease-in-out infinite;
+
+  @media (max-width: $breakpoint-md) {
+    font-size: 4rem;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+// Section Header
+.wrapperSectionHeader {
+  text-align: center;
+  margin-bottom: $space-xl;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+
+  .wrapperPpcPage.visible & {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wrapperSectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: $color-gray-900;
+  margin-bottom: $space-xs;
+  line-height: 1.2;
+
+  @media (max-width: $breakpoint-md) {
+    font-size: 1.5rem;
+  }
+}
+
+.wrapperHighlight {
+  color: $primary;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: rgba($primary, 0.2);
+    z-index: -1;
+    border-radius: 3px;
+  }
+}
+
+.wrapperSectionDescription {
+  font-size: 1rem;
+  color: $color-gray-600;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+// Benefits Section
+.wrapperBenefitsSection {
+  padding: $space-xl * 2 0;
+  background: $color-white;
+}
+
+.wrapperBenefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $space-lg;
+
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.wrapperBenefitCard {
+  padding: $space-lg;
+  background: $color-white;
+  border-radius: 16px;
+  border: 1px solid $color-gray-200;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.4s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &.primary:hover { border-color: $primary; }
+  &.purple:hover { border-color: $color-purple-400; }
+  &.orange:hover { border-color: $color-orange-400; }
+  &.teal:hover { border-color: $color-teal-400; }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -10px rgba($primary, 0.1);
+  }
+}
+
+.wrapperBenefitIcon {
+  font-size: 2rem;
+  margin-bottom: $space-md;
+}
+
+.wrapperBenefitTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: $color-gray-900;
+  margin-bottom: $space-xs;
+}
+
+.wrapperBenefitDescription {
+  font-size: 0.9rem;
+  color: $color-gray-600;
+  line-height: 1.5;
+}
+
+// Platforms Section
+.wrapperPlatformsSection {
+  padding: $space-xl * 2 0;
+  background: $color-gray-50;
+}
+
+.wrapperPlatformsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-xl;
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+    gap: $space-lg;
+  }
+}
+
+.wrapperPlatformCard {
+  background: $color-white;
+  padding: $space-xl;
+  border-radius: 24px;
+  border: 1px solid $color-gray-200;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.4s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &.google:hover {
+    border-color: #4285f4;
+    box-shadow: 0 15px 30px -10px rgba(#4285f4, 0.2);
+  }
+
+  &.meta:hover {
+    border-color: #4267b2;
+    box-shadow: 0 15px 30px -10px rgba(#4267b2, 0.2);
+  }
+}
+
+.wrapperPlatformHeader {
+  display: flex;
+  align-items: center;
+  gap: $space-sm;
+  margin-bottom: $space-md;
+}
+
+.wrapperPlatformIcon {
+  font-size: 2.5rem;
+}
+
+.wrapperPlatformName {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $color-gray-900;
+}
+
+.wrapperPlatformDescription {
+  font-size: 1rem;
+  color: $color-gray-600;
+  margin-bottom: $space-sm;
+  line-height: 1.5;
+}
+
+.wrapperPlatformStats {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: $primary;
+  margin-bottom: $space-md;
+  padding-bottom: $space-md;
+  border-bottom: 1px dashed $color-gray-200;
+}
+
+.wrapperPlatformFeatures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-xs;
+}
+
+.wrapperPlatformFeature {
+  font-size: 0.8rem;
+  color: $color-gray-600;
+  background: $color-gray-50;
+  padding: 4px $space-sm;
+  border-radius: 20px;
+  border: 1px solid $color-gray-200;
+}
+
+// Google & Meta Sections
+.wrapperGoogleSection,
+.wrapperMetaSection {
+  padding: $space-xl * 2 0;
+  background: $color-white;
+}
+
+.wrapperMetaSection {
+  background: $color-gray-50;
+}
+
+.wrapperFeaturesGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: $space-md;
+  margin-bottom: $space-xl;
+
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.wrapperFeatureCard {
+  background: $color-white;
+  padding: $space-lg;
+  border-radius: 16px;
+  border: 1px solid $color-gray-200;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.4s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: $primary;
+  }
+}
+
+.wrapperFeatureIcon {
+  font-size: 2rem;
+  margin-bottom: $space-sm;
+}
+
+.wrapperFeatureTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: $color-gray-900;
+  margin-bottom: $space-xs;
+}
+
+.wrapperFeatureDescription {
+  font-size: 0.85rem;
+  color: $color-gray-600;
+  margin-bottom: $space-sm;
+  line-height: 1.4;
+}
+
+.wrapperFeatureTag {
+  font-size: 0.75rem;
+  color: $primary;
+  background: rgba($primary, 0.1);
+  padding: 2px $space-xs;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.wrapperTargetingBox {
+  background: $color-white;
+  padding: $space-lg;
+  border-radius: 16px;
+  border: 1px solid $color-gray-200;
+  margin-top: $space-xl;
+}
+
+.wrapperTargetingTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: $color-gray-900;
+  margin-bottom: $space-md;
+}
+
+.wrapperTargetingList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+}
+
+.wrapperTargetingItem {
+  font-size: 0.9rem;
+  color: $color-gray-600;
+  background: $color-gray-50;
+  padding: $space-xs $space-md;
+  border-radius: 30px;
+  border: 1px solid $color-gray-200;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: $primary;
+    color: $color-white;
+    border-color: $primary;
+  }
+}
+
+// Ad Formats
+.wrapperFormatsSection {
+  padding: $space-xl * 2 0;
+  background: $color-white;
+}
+
+.wrapperFormatsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-xl;
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+    gap: $space-lg;
+  }
+}
+
+.wrapperFormatCard {
+  background: $color-gray-50;
+  padding: $space-xl;
+  border-radius: 20px;
+  border: 1px solid $color-gray-200;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: $primary;
+  }
+}
+
+.wrapperFormatPlatform {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $color-gray-900;
+  margin-bottom: $space-md;
+  padding-bottom: $space-sm;
+  border-bottom: 2px solid $primary;
+}
+
+.wrapperFormatList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+}
+
+.wrapperFormatItem {
+  font-size: 0.9rem;
+  color: $color-gray-600;
+  background: $color-white;
+  padding: $space-xs $space-md;
+  border-radius: 30px;
+  border: 1px solid $color-gray-200;
+}
+
+// Process
+.wrapperProcessSection {
+  padding: $space-xl * 2 0;
+  background: $color-gray-50;
+}
+
+.wrapperProcessSteps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $space-lg;
+  max-width: 900px;
+  margin: 0 auto;
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.wrapperProcessStep {
+  text-align: center;
+  padding: $space-lg;
+  background: $color-white;
+  border-radius: 16px;
+  border: 1px solid $color-gray-200;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: $primary;
+  }
+}
+
+.wrapperStepNumber {
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba($primary, 0.2);
+  display: block;
+  margin-bottom: $space-xs;
+}
+
+.wrapperStepTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: $color-gray-900;
+  margin-bottom: $space-xs;
+}
+
+.wrapperStepDescription {
+  font-size: 0.85rem;
+  color: $color-gray-600;
+  line-height: 1.4;
+}
+
+// Pricing Models
+.wrapperPricingSection {
+  padding: $space-xl * 2 0;
+  background: $color-white;
+}
+
+.wrapperPricingGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $space-lg;
+
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.wrapperPricingCard {
+  padding: $space-lg;
+  background: $color-gray-50;
+  border-radius: 16px;
+  border: 1px solid $color-gray-200;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: $primary;
+    background: $color-white;
+  }
+}
+
+.wrapperPricingModel {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: $color-gray-900;
+  margin-bottom: $space-xs;
+}
+
+.wrapperPricingDescription {
+  font-size: 0.9rem;
+  color: $color-gray-600;
+  margin-bottom: $space-sm;
+  line-height: 1.4;
+}
+
+.wrapperPricingTag {
+  font-size: 0.8rem;
+  color: $primary;
+  background: rgba($primary, 0.1);
+  padding: 2px $space-xs;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+// FAQ
+.wrapperFaqSection {
+  padding: $space-xl * 2 0;
+  background: $color-gray-50;
+}
+
+.wrapperFaqGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-lg;
+  max-width: 900px;
+  margin: 0 auto;
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+    gap: $space-md;
+  }
+}
+
+.wrapperFaqItem {
+  padding: $space-lg;
+  background: $color-white;
+  border-radius: 16px;
+  border: 1px solid $color-gray-200;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: $primary;
+  }
+}
+
+.wrapperFaqQuestion {
+  font-size: 1rem;
+  font-weight: 600;
+  color: $color-gray-900;
+  margin-bottom: $space-xs;
+}
+
+.wrapperFaqAnswer {
+  font-size: 0.9rem;
+  color: $color-gray-600;
+  line-height: 1.5;
+}
+
+// CTA
+.wrapperCtaSection {
+  padding: $space-xl * 2 0;
+  background: $color-white;
+}
+
+.wrapperCtaCard {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: $space-xl * 1.5;
+  background: linear-gradient(135deg, $primary 0%, $secondary 100%);
+  border-radius: 32px;
+  color: $color-white;
+}
+
+.wrapperCtaTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: $space-sm;
+}
+
+.wrapperCtaText {
+  font-size: 1rem;
+  margin-bottom: $space-xl;
+  opacity: 0.9;
+  color: $color-white;
+}
+
+.wrapperCtaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-xs;
+  background: $color-white;
+  color: $primary;
+  border: none;
+  padding: $space-md $space-xl;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -5px rgba($color-black, 0.2);
+    gap: $space-md;
+
+    svg {
+      transform: translateX(4px);
+    }
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+  }
+}

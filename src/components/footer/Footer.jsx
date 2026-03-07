@@ -1,0 +1,279 @@
+import React, { useEffect, useRef } from 'react';
+import styles from './Footer.module.scss';
+
+const Footer = () => {
+  const footerRef = useRef(null);
+  const columnsRef = useRef([]);
+
+  const footerLinks = {
+    services: [
+      { name: 'SEO Optimization', url: '#' },
+      { name: 'Social Media Marketing', url: '#' },
+      { name: 'Content Marketing', url: '#' },
+      { name: 'Email Marketing', url: '#' },
+      { name: 'PPC Advertising', url: '#' },
+      { name: 'Analytics & Reporting', url: '#' },
+    ],
+    company: [
+      { name: 'About Us', url: '#' },
+      { name: 'Our Team', url: '#' },
+      { name: 'Careers', url: '#' },
+      { name: 'Blog', url: '#' },
+      { name: 'Press', url: '#' },
+      { name: 'Contact Us', url: '#' },
+    ],
+    resources: [
+      { name: 'Case Studies', url: '#' },
+      { name: 'E-books & Guides', url: '#' },
+      { name: 'Webinars', url: '#' },
+      { name: 'Tools & Templates', url: '#' },
+      { name: 'Help Center', url: '#' },
+      { name: 'API Documentation', url: '#' },
+    ],
+    legal: [
+      { name: 'Privacy Policy', url: '#' },
+      { name: 'Terms of Service', url: '#' },
+      { name: 'Cookie Policy', url: '#' },
+      { name: 'GDPR Compliance', url: '#' },
+      { name: 'Disclaimer', url: '#' },
+    ],
+  };
+
+  const socialLinks = [
+    { name: 'LinkedIn', icon: '💼', url: '#', color: '#0077b5' },
+    { name: 'Twitter', icon: '🐦', url: '#', color: '#1da1f2' },
+    { name: 'Facebook', icon: '📘', url: '#', color: '#4267b2' },
+    { name: 'Instagram', icon: '📷', url: '#', color: '#e4405f' },
+    { name: 'YouTube', icon: '▶️', url: '#', color: '#ff0000' },
+    { name: 'TikTok', icon: '🎵', url: '#', color: '#000000' },
+  ];
+
+  const contactInfo = {
+    email: 'hello@digitalmarketing.com',
+    phone: '+1 (555) 123-4567',
+    address: '123 Innovation Street, San Francisco, CA 94105',
+    hours: 'Mon - Fri: 9:00 AM - 6:00 PM PST',
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(styles.visible);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    // Observe footer
+    if (footerRef.current) {
+      observer.observe(footerRef.current);
+    }
+
+    // Observe footer columns
+    columnsRef.current.forEach((column) => {
+      if (column) observer.observe(column);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <footer className={styles.wrapperFooter} ref={footerRef}>
+      {/* Main Footer */}
+      <div className={styles.wrapperFooterMain}>
+        <div className={styles.wrapperFooterContainer}>
+          {/* Brand Column */}
+          <div 
+            className={styles.wrapperFooterColumn}
+            ref={(el) => (columnsRef.current[0] = el)}
+          >
+            <div className={styles.wrapperBrandContent}>
+              <div className={styles.wrapperLogo}>
+                <span className={styles.wrapperLogoIcon}>🚀</span>
+                <span className={styles.wrapperLogoText}>Click<span>Grows</span></span>
+              </div>
+              <p className={styles.wrapperBrandDescription}>
+                Transforming businesses through innovative digital marketing strategies that drive growth, engagement, and measurable results.
+              </p>
+              
+              {/* Newsletter Signup */}
+              <div className={styles.wrapperNewsletter}>
+                <h4 className={styles.wrapperNewsletterTitle}>Stay Updated</h4>
+                <p className={styles.wrapperNewsletterText}>
+                  Subscribe to our newsletter for the latest insights and trends.
+                </p>
+                <form className={styles.wrapperNewsletterForm} onSubmit={(e) => e.preventDefault()}>
+                  <div className={styles.wrapperInputGroup}>
+                    <input 
+                      type="email" 
+                      placeholder="Enter your email" 
+                      className={styles.wrapperNewsletterInput}
+                      aria-label="Email for newsletter"
+                    />
+                    <button type="submit" className={styles.wrapperNewsletterButton}>
+                      <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          {/* Services Column */}
+          <div 
+            className={styles.wrapperFooterColumn}
+            ref={(el) => (columnsRef.current[1] = el)}
+          >
+            <h3 className={styles.wrapperColumnTitle}>Services</h3>
+            <ul className={styles.wrapperLinkList}>
+              {footerLinks.services.map((link, index) => (
+                <li key={index} className={styles.wrapperLinkItem}>
+                  <a href={link.url} className={styles.wrapperLink}>
+                    <span className={styles.wrapperLinkDot}></span>
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company Column */}
+          <div 
+            className={styles.wrapperFooterColumn}
+            ref={(el) => (columnsRef.current[2] = el)}
+          >
+            <h3 className={styles.wrapperColumnTitle}>Company</h3>
+            <ul className={styles.wrapperLinkList}>
+              {footerLinks.company.map((link, index) => (
+                <li key={index} className={styles.wrapperLinkItem}>
+                  <a href={link.url} className={styles.wrapperLink}>
+                    <span className={styles.wrapperLinkDot}></span>
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources & Legal Column */}
+          <div 
+            className={styles.wrapperFooterColumn}
+            ref={(el) => (columnsRef.current[3] = el)}
+          >
+            <h3 className={styles.wrapperColumnTitle}>Resources</h3>
+            <ul className={styles.wrapperLinkList}>
+              {footerLinks.resources.map((link, index) => (
+                <li key={index} className={styles.wrapperLinkItem}>
+                  <a href={link.url} className={styles.wrapperLink}>
+                    <span className={styles.wrapperLinkDot}></span>
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <div className={styles.wrapperDivider}></div>
+
+            <h3 className={`${styles.wrapperColumnTitle} ${styles.wrapperSecondTitle}`}>Legal</h3>
+            <ul className={styles.wrapperLinkList}>
+              {footerLinks.legal.map((link, index) => (
+                <li key={index} className={styles.wrapperLinkItem}>
+                  <a href={link.url} className={styles.wrapperLink}>
+                    <span className={styles.wrapperLinkDot}></span>
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Contact Bar */}
+      <div className={styles.wrapperContactBar}>
+        <div className={styles.wrapperContactContainer}>
+          <div className={styles.wrapperContactInfo}>
+            <div className={styles.wrapperContactItem}>
+              <span className={styles.wrapperContactIcon}>📧</span>
+              <a href={`mailto:${contactInfo.email}`} className={styles.wrapperContactLink}>
+                {contactInfo.email}
+              </a>
+            </div>
+            <div className={styles.wrapperContactItem}>
+              <span className={styles.wrapperContactIcon}>📞</span>
+              <a href={`tel:${contactInfo.phone.replace(/\D/g, '')}`} className={styles.wrapperContactLink}>
+                {contactInfo.phone}
+              </a>
+            </div>
+            <div className={styles.wrapperContactItem}>
+              <span className={styles.wrapperContactIcon}>📍</span>
+              <span className={styles.wrapperContactText}>{contactInfo.address}</span>
+            </div>
+            <div className={styles.wrapperContactItem}>
+              <span className={styles.wrapperContactIcon}>🕒</span>
+              <span className={styles.wrapperContactText}>{contactInfo.hours}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Footer */}
+      <div className={styles.wrapperFooterBottom}>
+        <div className={styles.wrapperBottomContainer}>
+          <div className={styles.wrapperBottomContent}>
+            <div className={styles.wrapperCopyright}>
+              <p>© {new Date().getFullYear()} DigiMark. All rights reserved.</p>
+              <p className={styles.wrapperMadeWith}>
+                Made with <span className={styles.wrapperHeart}>❤️</span> for digital innovation
+              </p>
+            </div>
+
+            {/* Social Links */}
+            <div className={styles.wrapperSocialLinks}>
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.url}
+                  className={styles.wrapperSocialLink}
+                  style={{ '--social-color': social.color }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Follow us on ${social.name}`}
+                >
+                  <span className={styles.wrapperSocialIcon}>{social.icon}</span>
+                  <span className={styles.wrapperSocialName}>{social.name}</span>
+                </a>
+              ))}
+            </div>
+
+            {/* Payment Methods */}
+            <div className={styles.wrapperPaymentMethods}>
+              <span className={styles.wrapperPaymentIcon}>💳</span>
+              <span className={styles.wrapperPaymentIcon}>💰</span>
+              <span className={styles.wrapperPaymentIcon}>📱</span>
+              <span className={styles.wrapperPaymentIcon}>🔒</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Back to Top Button */}
+      <button 
+        className={styles.wrapperBackToTop}
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        aria-label="Back to top"
+      >
+        <svg viewBox="0 0 20 20" fill="currentColor">
+          <path fillRule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clipRule="evenodd" />
+        </svg>
+      </button>
+    </footer>
+  );
+};
+
+export default Footer;

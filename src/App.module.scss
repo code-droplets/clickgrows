@@ -1,0 +1,6 @@
+@import "./styles/_container.scss";
+@import "./styles/_mixins.scss";
+
+.App {
+    @include container();
+}

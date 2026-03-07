@@ -1,0 +1,129 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.topPanel {
+  background: linear-gradient(135deg, #3a3a2a 0%, #4a4a3a 100%);
+  padding: 0.75rem 1rem;
+  position: relative;
+  overflow: hidden;
+  animation: slideDown 0.6s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shimmer 3s infinite;
+  }
+
+  &__content {
+    @include flex-justify-between;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__contacts {
+    @include flex-center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+
+    @include respond($breakpoint-md) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__link {
+    color: $white;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+
+    .icon {
+      font-size: 1rem;
+      transition: transform 0.3s ease;
+    }
+    .whatsappIcon{
+      width: 16px;
+      height: 16px;
+    }
+
+    &:hover {
+      color: #ffd700;
+      transform: translateY(-2px);
+
+      .icon {
+        transform: scale(1.2) rotate(5deg);
+      }
+    }
+
+    &__whatsapp {
+      &:hover {
+        color: #25D366;
+      }
+    }
+  }
+
+  &__divider {
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 300;
+    display: none;
+
+    @include respond($breakpoint-md) {
+      display: inline;
+    }
+  }
+}
+
+// Animations
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+// Responsive
+@media (max-width: 767px) {
+  .top-panel {
+    padding: 0.5rem;
+
+    &__contacts {
+      gap: 0.5rem;
+      font-size: 0.75rem;
+    }
+
+    &__link {
+      font-size: 0.75rem;
+
+      .icon {
+        font-size: 0.875rem;
+      }
+    }
+  }
+}
