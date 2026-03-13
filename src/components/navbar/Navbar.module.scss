@@ -102,7 +102,7 @@
       left: 50%;
       width: 0;
       height: 2px;
-      background: linear-gradient(90deg, #ffd700, #ffed4e);
+      background: linear-gradient(90deg, #4f46e5, #6660d7);
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       transform: translateX(-50%);
     }
@@ -146,12 +146,12 @@
         transform: translateY(-50%);
         width: 3px;
         height: 0;
-        background: linear-gradient(180deg, #ffd700, #ffed4e);
+        background: linear-gradient(180deg, #4f46e5, #6660d7);
         transition: height 0.3s ease;
       }
 
       &:hover {
-        background: rgba(255, 215, 0, 0.08);
+        background: rgba(79, 70, 229, 0.08);
         color: $color-gray-900;
         padding-left: 1.75rem;
 
@@ -176,14 +176,14 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1.75rem;
-    background: linear-gradient(135deg, #ecd346 0%, #cebb0f 100%);
-    color: $color-gray-900;
+    background: linear-gradient(135deg, #4f46e5 0%, #6660d7 100%);
+    color: $color-gray-50;
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9rem;
     border-radius: 50px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
     position: relative;
     overflow: hidden;
 
@@ -200,8 +200,8 @@
 
     &:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
-
+      box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+      
       &::before {
         left: 100%;
       }
@@ -260,7 +260,7 @@
     }
 
     &:hover span {
-      background: #ffd700;
+      background: #4f46e5;
     }
   }
 
@@ -308,7 +308,7 @@
       transition: all 0.3s ease;
 
       &:hover {
-        background: rgba(255, 215, 0, 0.1);
+        background: rgba(79, 70, 229, 0.1);
         color: $color-gray-900;
         padding-left: 1.5rem;
       }
@@ -316,14 +316,15 @@
   }
 
   &__mobile_cta {
-    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-    color: $color-gray-900 !important;
+    background: linear-gradient(135deg, #4f46e5 0%, #6660d7 100%);
+    color: $color-gray-50 !important;
     font-weight: 600;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
-
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+    
     &:hover {
       transform: scale(1.02);
+      color: $color-primary !important;
     }
   }
 }

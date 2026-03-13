@@ -11,6 +11,8 @@ import OrganicSocialMediaPage from './pages/social-media-marketing/SocialMediaMa
 import PPCAdsPage from './pages/ppc/Ppc.jsx';
 import BingAdsPage from './pages/paid-ads/PaidAds.jsx';
 import ContactForm from './components/contactForm/ContactForm.jsx';
+import WebDevelopmentPage from './pages/web-development/WebDevelopment.jsx';
+
 function App() {
   return (
     <>
@@ -32,6 +34,9 @@ function App() {
           </Routes>
           <Routes>
             <Route path="/paid-advertising" element={<BingAdsPage />} />
+          </Routes>
+          <Routes>
+            <Route path="/web-development" element={<WebDevelopmentPage />} />
           </Routes>
           <Routes>
             <Route path="/contact-us" element={<ContactForm />} />

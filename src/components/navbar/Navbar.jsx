@@ -10,14 +10,14 @@ const Navbar = () => {
   // Create refs for each dropdown item
   const navbarRef = useRef(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setIsScrolled(window.scrollY > 50);
+  //   };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, []);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -205,9 +205,9 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className={style.navbar__cta}>
-            <a href="/audit" className={style.navbar__cta_btn}>
+            <a href="/contact-us" className={style.navbar__cta_btn}>
               <span className={style.navbar__cta_icon}>→</span>
-              Free Website Audit
+              Get in Touch
             </a>
           </div>
 
@@ -244,7 +244,7 @@ const Navbar = () => {
               </li>
               <li className={style.navbar__mobile_item}>
                 <a href="/audit" className={style.navbar__mobile_cta} onClick={() => setIsMobileMenuOpen(false)}>
-                  Free Website Audit
+                  Get in Touch
                 </a>
               </li>
             </ul>

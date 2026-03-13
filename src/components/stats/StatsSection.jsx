@@ -4,16 +4,16 @@ import styles from './StatsSection.module.scss';
 const StatsSection = () => {
   const statsData = [
     {
-      value: '9.4X',
-      description: 'Average ROAS across all paid campaigns'
+      value: '6.8X',
+      description: 'Average ROAS generated from high-performance paid media campaigns'
     },
     {
-      value: '162%',
-      description: 'Year-over-Year Growth in Online Revenue'
+      value: '210%',
+      description: 'Average growth in brand visibility and audience reach'
     },
     {
-      value: '127%',
-      description: 'Growth in High-Intent MQLs (Marketing Qualified Leads)'
+      value: '145%',
+      description: 'Increase in qualified leads through social media marketing'
     }
   ];
 
@@ -25,16 +25,16 @@ const StatsSection = () => {
           <div className={styles.statsSection__badge}>
             <span className={styles.statsSection__badge_icon}>⚡</span>
             <span className={styles.statsSection__badge_text}>
-              NUMBERS THAT PROVE OUR IMPACT
+              RESULTS THAT DRIVE REAL BUSINESS GROWTH
             </span>
           </div>
           
           <h2 className={styles.statsSection__title}>
-            Stats That Define EZ Rankings
+            Performance Metrics That Define Our Marketing Impact
           </h2>
           
           <p className={styles.statsSection__subtitle}>
-            Data-Driven Results That Speak For Themselves
+            Proven Results Across Paid Media, Social Media Marketing & Branding
           </p>
         </div>
 

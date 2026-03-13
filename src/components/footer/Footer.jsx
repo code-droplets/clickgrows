@@ -7,20 +7,20 @@ const Footer = () => {
 
   const footerLinks = {
     services: [
-      { name: 'SEO Optimization', url: '#' },
-      { name: 'Social Media Marketing', url: '#' },
-      { name: 'Content Marketing', url: '#' },
-      { name: 'Email Marketing', url: '#' },
-      { name: 'PPC Advertising', url: '#' },
-      { name: 'Analytics & Reporting', url: '#' },
+      { name: 'Social Media Marketing', url: '/social-media-marketing' },
+      { name: 'PPC Management', url: '/ppc' },
+      { name: 'Paid Advertising', url: '/paid-advertising' },
+      { name: 'Web Development', url: '/web-development' },
+      // { name: 'Email Marketing', url: '#' },
+      // { name: 'Analytics & Reporting', url: '#' },
     ],
     company: [
-      { name: 'About Us', url: '#' },
-      { name: 'Our Team', url: '#' },
-      { name: 'Careers', url: '#' },
-      { name: 'Blog', url: '#' },
-      { name: 'Press', url: '#' },
-      { name: 'Contact Us', url: '#' },
+      { name: 'About Us', url: '/about-us' },
+      { name: 'Contact Us', url: '/contact-us' },
+      // { name: 'Our Team', url: '#' },
+      // { name: 'Careers', url: '#' },
+      // { name: 'Blog', url: '#' },
+      // { name: 'Press', url: '#' },
     ],
     resources: [
       { name: 'Case Studies', url: '#' },
@@ -33,19 +33,19 @@ const Footer = () => {
     legal: [
       { name: 'Privacy Policy', url: '#' },
       { name: 'Terms of Service', url: '#' },
-      { name: 'Cookie Policy', url: '#' },
-      { name: 'GDPR Compliance', url: '#' },
-      { name: 'Disclaimer', url: '#' },
+      // { name: 'Cookie Policy', url: '#' },
+      // { name: 'GDPR Compliance', url: '#' },
+      // { name: 'Disclaimer', url: '#' },
     ],
   };
 
   const socialLinks = [
     { name: 'LinkedIn', icon: '💼', url: '#', color: '#0077b5' },
-    { name: 'Twitter', icon: '🐦', url: '#', color: '#1da1f2' },
+    // { name: 'Twitter', icon: '🐦', url: '#', color: '#1da1f2' },
     { name: 'Facebook', icon: '📘', url: '#', color: '#4267b2' },
     { name: 'Instagram', icon: '📷', url: '#', color: '#e4405f' },
     { name: 'YouTube', icon: '▶️', url: '#', color: '#ff0000' },
-    { name: 'TikTok', icon: '🎵', url: '#', color: '#000000' },
+    // { name: 'TikTok', icon: '🎵', url: '#', color: '#000000' },
   ];
 
   const contactInfo = {
@@ -100,7 +100,7 @@ const Footer = () => {
               </p>
               
               {/* Newsletter Signup */}
-              <div className={styles.wrapperNewsletter}>
+              {/* <div className={styles.wrapperNewsletter}>
                 <h4 className={styles.wrapperNewsletterTitle}>Stay Updated</h4>
                 <p className={styles.wrapperNewsletterText}>
                   Subscribe to our newsletter for the latest insights and trends.
@@ -120,7 +120,7 @@ const Footer = () => {
                     </button>
                   </div>
                 </form>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -165,7 +165,7 @@ const Footer = () => {
             className={styles.wrapperFooterColumn}
             ref={(el) => (columnsRef.current[3] = el)}
           >
-            <h3 className={styles.wrapperColumnTitle}>Resources</h3>
+            {/* <h3 className={styles.wrapperColumnTitle}>Resources</h3>
             <ul className={styles.wrapperLinkList}>
               {footerLinks.resources.map((link, index) => (
                 <li key={index} className={styles.wrapperLinkItem}>
@@ -175,9 +175,9 @@ const Footer = () => {
                   </a>
                 </li>
               ))}
-            </ul>
+            </ul> */}
 
-            <div className={styles.wrapperDivider}></div>
+            {/* <div className={styles.wrapperDivider}></div> */}
 
             <h3 className={`${styles.wrapperColumnTitle} ${styles.wrapperSecondTitle}`}>Legal</h3>
             <ul className={styles.wrapperLinkList}>
@@ -229,7 +229,7 @@ const Footer = () => {
             <div className={styles.wrapperCopyright}>
               <p>© {new Date().getFullYear()} DigiMark. All rights reserved.</p>
               <p className={styles.wrapperMadeWith}>
-                Made with <span className={styles.wrapperHeart}>❤️</span> for digital innovation
+                Made with <span className={styles.wrapperHeart}>❤️</span> for ClickGrows.
               </p>
             </div>
 
@@ -251,13 +251,7 @@ const Footer = () => {
               ))}
             </div>
 
-            {/* Payment Methods */}
-            <div className={styles.wrapperPaymentMethods}>
-              <span className={styles.wrapperPaymentIcon}>💳</span>
-              <span className={styles.wrapperPaymentIcon}>💰</span>
-              <span className={styles.wrapperPaymentIcon}>📱</span>
-              <span className={styles.wrapperPaymentIcon}>🔒</span>
-            </div>
+            
           </div>
         </div>
       </div>

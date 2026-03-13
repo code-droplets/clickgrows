@@ -11,31 +11,31 @@ const Hero = () => {
 
   const statsData = [
     {
-      icon: '💰',
-      title: 'BOOSTING REVENUE',
-      range: '2X to 6X',
-      description: 'Proven growth results',
+      icon: '📢',
+      title: 'PAID MEDIA PERFORMANCE',
+      range: '3X to 7X',
+      description: 'Higher ROI from optimized ad campaigns',
       gradient: 'linear-gradient(135deg, #ffd700 0%, #ffed4e 100%)'
     },
     {
       icon: '🎯',
-      title: 'IMPROVED LEADS',
-      range: '3X to 8X',
-      description: 'Quality lead generation',
+      title: 'QUALIFIED LEAD GENERATION',
+      range: '2X to 6X',
+      description: 'More high-intent leads from targeted ads',
       gradient: 'linear-gradient(135deg, #4f46e5 0%, #6366f1 100%)'
     },
     {
       icon: '📱',
-      title: 'SOCIAL MEDIA ENGAGEMENT',
-      range: '4X to 8X',
-      description: 'Enhanced audience reach',
+      title: 'SOCIAL MEDIA GROWTH',
+      range: '4X to 9X',
+      description: 'Stronger engagement and audience growth',
       gradient: 'linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%)'
     },
     {
-      icon: '🚀',
-      title: 'BRAND EXPOSURE',
-      range: '100 to 1000%',
-      description: 'Massive visibility boost',
+      icon: '🎨',
+      title: 'BRAND VISIBILITY',
+      range: '200%+',
+      description: 'Build a powerful and recognizable brand',
       gradient: 'linear-gradient(135deg, #ffd700 0%, #ffed4e 100%)'
     }
   ];
@@ -44,33 +44,34 @@ const Hero = () => {
     <section className={`${style.hero} ${isVisible ? style.hero__visible : ''}`} ref={heroRef}>
       <div className={style.container}>
         <div className={style.hero__content}>
+          
           {/* Left Badge */}
           <div className={`${style.hero__badge} ${style.hero__badge__left}`}>
             <span className={style.hero__badge_icon}>📈</span>
-            <span className={style.hero__badge_text}>10x Growth</span>
+            <span className={style.hero__badge_text}>Revenue Growth</span>
           </div>
 
           {/* Main Content */}
           <div className={style.hero__main}>
             <div className={style.hero__tag}>
-              PERFORMANCE MARKETING
+              DIGITAL GROWTH AGENCY
             </div>
 
             <h1 className={style.hero__title}>
-              <span className={style.hero__title_highlight}>AI-Driven</span>
+              <span className={style.hero__title_highlight}>Paid Media</span>
               <br />
-              <span className={style.hero__title_subtitle}>Performance Marketing Agency</span>
+              <span className={style.hero__title_subtitle}>Social Media Marketing</span>
               <br />
-              <span className={style.hero__title_main}>Powering Growth with Precision and AI</span>
+              <span className={style.hero__title_main}>Scaling Brands with Strategic Advertising</span>
             </h1>
 
             <button className={style.hero__cta}>
               <span className={style.hero__cta_icon}>→</span>
-              Claim Your Free Strategy
+              Get Your Free Marketing Strategy
             </button>
 
             <div className={style.hero__rating}>
-              <p className={style.hero__rating_text}>Rated 5 Stars Based on 600+ Client Reviews</p>
+              <p className={style.hero__rating_text}>Trusted by 500+ Brands for Marketing & Growth</p>
               <div className={style.hero__stars}>
                 {[...Array(5)].map((_, index) => (
                   <span key={index} className={style.hero__star}>⭐</span>
@@ -81,11 +82,10 @@ const Hero = () => {
 
           {/* Right Badge */}
           <div className={`${style.hero__badge} ${style.hero__badge__right}`}>
-            <span className={style.hero__badge_icon}>🤖</span>
-            <span className={style.hero__badge_text}>AI-Powered Results</span>
+            <span className={style.hero__badge_icon}>🚀</span>
+            <span className={style.hero__badge_text}>Performance Focused</span>
           </div>
 
-          
         </div>
 
         {/* Stats Section */}

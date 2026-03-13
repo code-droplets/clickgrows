@@ -6,6 +6,7 @@ const INITIAL_STATE = {
   fullName: "",
   email: "",
   phone: "",
+  city: "",
   subject: "",
   category: "",
   message: "",
@@ -81,7 +82,7 @@ const ContactForm = () => {
     const errors = validate();
     if (Object.keys(errors).length > 0) {
       setFieldErrors(errors);
-      
+
       // Shake animation on error
       if (formRef.current) {
         formRef.current.classList.add(style.shake);
@@ -111,7 +112,7 @@ const ContactForm = () => {
             <div className={style.successState}>
               <div className={style.successState__icon}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                  <path d="M20 6L9 17L4 12" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M20 6L9 17L4 12" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
               <h2 className={style.successState__title}>Submission Successful!</h2>
@@ -146,10 +147,7 @@ const ContactForm = () => {
         </div>
 
         <div className={style.formContainer__header}>
-          <div className={style.formContainer__badge}>
-            <span className={style.dot} />
-            <span className={style.badgeText}>Firebase + Google Sheets</span>
-          </div>
+
           <h1 className={style.formContainer__title}>
             Get In <span>Touch</span>
           </h1>
@@ -211,32 +209,53 @@ const ContactForm = () => {
             </div>
 
             {/* Email */}
-            <div className={`${style.field} ${focusedField === 'email' ? style.fieldFocused : ''}`}>
-              <label className={style.field__label}>
-                Email Address <span className={style.required}>*</span>
-              </label>
-              <div className={style.field__wrapper}>
-                <span className={style.field__icon}>✉️</span>
-                <input
-                  className={`${style.field__input} ${fieldErrors.email ? style.hasError : ""}`}
-                  type="email"
-                  name="email"
-                  placeholder="john@example.com"
-                  value={formData.email}
-                  onChange={handleChange}
-                  onFocus={() => handleFocus('email')}
-                  onBlur={handleBlur}
-                  disabled={isLoading}
-                />
+            <div className={style.fieldRow}>
+
+              <div className={`${style.field} ${focusedField === 'email' ? style.fieldFocused : ''}`}>
+                <label className={style.field__label}>
+                  Email Address <span className={style.required}>*</span>
+                </label>
+                <div className={style.field__wrapper}>
+                  <span className={style.field__icon}>✉️</span>
+                  <input
+                    className={`${style.field__input} ${fieldErrors.email ? style.hasError : ""}`}
+                    type="email"
+                    name="email"
+                    placeholder="john@example.com"
+                    value={formData.email}
+                    onChange={handleChange}
+                    onFocus={() => handleFocus('email')}
+                    onBlur={handleBlur}
+                    disabled={isLoading}
+                  />
+                </div>
+                {fieldErrors.email && (
+                  <span className={style.field__error}>
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                    </svg>
+                    {fieldErrors.email}
+                  </span>
+                )}
               </div>
-              {fieldErrors.email && (
-                <span className={style.field__error}>
-                  <svg viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                  </svg>
-                  {fieldErrors.email}
-                </span>
-              )}
+
+              <div className={`${style.field} ${focusedField === 'city' ? style.fieldFocused : ''}`}>
+                <label className={style.field__label}>City</label>
+                <div className={style.field__wrapper}>
+                  <span className={style.field__icon}>🏙️</span>
+                  <input
+                    className={`${style.field__input} ${fieldErrors.city ? style.hasError : ""}`}
+                    type="text"
+                    name="city"
+                    placeholder="Your City"
+                    value={formData.city}
+                    onChange={handleChange}
+                    onFocus={() => handleFocus('city')}
+                    onBlur={handleBlur}
+                    disabled={isLoading}
+                  />
+                </div>
+              </div>
             </div>
 
             {/* Category + Subject */}
@@ -352,7 +371,7 @@ const ContactForm = () => {
                 </>
               ) : (
                 <>
-                  <span>Submit to Google Sheets</span>
+                  <span>Submit</span>
                   <svg viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
@@ -362,20 +381,7 @@ const ContactForm = () => {
           </form>
         </div>
 
-        <div className={style.formMeta}>
-          <span className={style.metaItem}>
-            <span className={style.metaDot}></span>
-            Saved to Firestore
-          </span>
-          <span className={style.metaItem}>
-            <span className={style.metaDot}></span>
-            Synced to Google Sheets
-          </span>
-          <span className={style.metaItem}>
-            <span className={style.metaDot}></span>
-            Secured
-          </span>
-        </div>
+
       </div>
     </div>
   );
