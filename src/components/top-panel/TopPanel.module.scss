@@ -2,7 +2,7 @@
 @import '../../styles/mixins';
 
 .topPanel {
-  background: linear-gradient(135deg, #3a3a2a 0%, #4a4a3a 100%);
+  background: var(--bg-secondary); // Using theme variable
   padding: 0.75rem 1rem;
   position: relative;
   overflow: hidden;
@@ -10,6 +10,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-bottom: 1px solid var(--border-color); // Using theme variable
+
+  // Light theme specific styling
+  .light-theme & {
+    background: var(--bg-secondary);
+    border-bottom-color: var(--border-color);
+  }
+
+  // Dark theme specific styling
+  .dark-theme & {
+    background: var(--bg-secondary);
+    border-bottom-color: var(--border-color);
+  }
 
   &::before {
     content: '';
@@ -18,19 +31,22 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, var(--border-color), transparent); // Using theme variable
     animation: shimmer 3s infinite;
+    pointer-events: none;
   }
 
   &__content {
     @include flex-justify-between;
     position: relative;
     z-index: 1;
+    width: 100%;
+    max-width: $container-width;
   }
 
   &__contacts {
     @include flex-center;
-    gap: 1rem;
+    gap: $space-sm;
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
@@ -41,13 +57,13 @@
   }
 
   &__link {
-    color: $white;
+    color: $white; // Using theme variable
     text-decoration: none;
     font-size: 0.875rem;
     font-weight: 400;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: $space-xs;
     transition: all 0.3s ease;
     position: relative;
 
@@ -55,31 +71,40 @@
       font-size: 1rem;
       transition: transform 0.3s ease;
     }
-    .whatsappIcon{
+
+    .whatsappIcon {
       width: 16px;
       height: 16px;
+      transition: transform 0.3s ease;
+      filter: var(--arrow-filter); // Using theme variable for icon color
     }
 
-    &:hover {
-      color: #ffd700;
-      transform: translateY(-2px);
+    // &:hover {
+    //   color: $primary; // Using primary color from variables
+    //   transform: translateY(-2px);
 
-      .icon {
-        transform: scale(1.2) rotate(5deg);
-      }
-    }
+    //   .icon {
+    //     transform: scale(1.2) rotate(5deg);
+    //   }
+
+    //   .whatsappIcon {
+    //     transform: scale(1.2) rotate(5deg);
+    //     filter: brightness(0) saturate(100%) invert(64%) sepia(36%) saturate(700%) hue-rotate(350deg); // Makes icon turn to primary color
+    //   }
+    // }
 
     &__whatsapp {
       &:hover {
-        color: #25D366;
+        color: #25D366; // Keep WhatsApp green on hover
       }
     }
   }
 
   &__divider {
-    color: rgba(255, 255, 255, 0.3);
+    color: var(--text-secondary); // Using theme variable
     font-weight: 300;
     display: none;
+    opacity: 0.5;
 
     @include respond($breakpoint-md) {
       display: inline;
@@ -108,14 +133,40 @@
   }
 }
 
+// Dark theme specific adjustments
+.dark-theme {
+  .topPanel {
+    &__link {
+      .whatsappIcon {
+        filter: brightness(0) invert(1); // White icon in dark mode
+      }
+
+      &:hover {
+        .whatsappIcon {
+          filter: brightness(0) saturate(100%) invert(64%) sepia(36%) saturate(700%) hue-rotate(350deg); // Primary color on hover
+        }
+      }
+
+      &__whatsapp {
+        &:hover {
+          color: #25D366;
+          
+          .whatsappIcon {
+            filter: brightness(0) saturate(100%) invert(51%) sepia(98%) saturate(1388%) hue-rotate(88deg) brightness(95%) contrast(94%); // WhatsApp green
+          }
+        }
+      }
+    }
+  }
+}
+
 // Responsive
 @media (max-width: 767px) {
-  .top-panel {
-    padding: 0.5rem;
+  .topPanel {
+    padding: $space-xs;
 
     &__contacts {
-      gap: 0.5rem;
-      font-size: 0.75rem;
+      gap: $space-xs;
     }
 
     &__link {
@@ -123,6 +174,11 @@
 
       .icon {
         font-size: 0.875rem;
+      }
+
+      .whatsappIcon {
+        width: 14px;
+        height: 14px;
       }
     }
   }

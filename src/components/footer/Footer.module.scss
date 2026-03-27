@@ -1,10 +1,10 @@
-@import '../../styles/variables.scss';
-@import '../../styles/mixins.scss';
+@import '../../styles/variables';
+@import '../../styles/mixins';
 
 .wrapperFooter {
   position: relative;
-  background: linear-gradient(135deg, $color-gray-900 0%, #1a1f2e 100%);
-  color: $color-gray-200;
+  background: var(--bg-primary); // Using theme variable
+  color: var(--text-secondary); // Using theme variable
   overflow: hidden;
 
   &::before {
@@ -42,7 +42,7 @@
   position: relative;
   z-index: 2;
   padding: $space-xl * 2 0 $space-xl;
-  border-bottom: 1px solid rgba($color-white, 0.05);
+  border-bottom: 1px solid var(--border-color); // Using theme variable
 }
 
 .wrapperFooterContainer {
@@ -102,19 +102,18 @@
 
   .wrapperLogoIcon {
     font-size: 2rem;
-    background: linear-gradient(135deg, $primary, $color-purple-400);
     padding: $space-xs;
     border-radius: 12px;
     transform: rotate(-5deg);
     transition: transform 0.3s ease;
-
-    &:hover {
-      transform: rotate(0deg) scale(1.1);
+    img{
+      width: 100px;
+      height: 100px;
     }
   }
 
   .wrapperLogoText {
-    color: $color-white;
+    color: var(--text-primary); // Using theme variable
     
     span {
       color: $primary;
@@ -137,21 +136,21 @@
 .wrapperBrandDescription {
   font-size: 0.95rem;
   line-height: 1.7;
-  color: $color-gray-200;
+  color: var(--text-secondary); // Using theme variable
   margin-bottom: $space-sm;
   opacity: 0.9;
 }
 
 .wrapperNewsletter {
-  background: rgba($color-white, 0.03);
+  background: var(--card-bg); // Using theme variable
   padding: $space-lg;
   border-radius: 16px;
-  border: 1px solid rgba($color-white, 0.05);
+  border: 1px solid var(--border-color); // Using theme variable
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
 
   &:hover {
-    background: rgba($color-white, 0.05);
+    background: var(--bg-secondary); // Using theme variable
     border-color: rgba($primary, 0.3);
     transform: translateY(-2px);
   }
@@ -160,13 +159,13 @@
 .wrapperNewsletterTitle {
   font-size: 1rem;
   font-weight: 600;
-  color: $color-white;
+  color: var(--text-primary); // Using theme variable
   margin-bottom: $space-xs;
 }
 
 .wrapperNewsletterText {
   font-size: 0.85rem;
-  color: $color-gray-200;
+  color: var(--text-secondary); // Using theme variable
   margin-bottom: $space-md;
   opacity: 0.8;
 }
@@ -178,16 +177,16 @@
 .wrapperInputGroup {
   display: flex;
   gap: $space-xs;
-  background: rgba($color-white, 0.05);
+  background: var(--bg-secondary); // Using theme variable
   border-radius: 50px;
   padding: 4px;
-  border: 1px solid rgba($color-white, 0.1);
+  border: 1px solid var(--border-color); // Using theme variable
   transition: all 0.3s ease;
 
   &:focus-within {
     border-color: $primary;
     box-shadow: 0 0 0 3px rgba($primary, 0.1);
-    background: rgba($color-white, 0.08);
+    background: var(--card-bg); // Using theme variable
   }
 }
 
@@ -196,12 +195,13 @@
   background: transparent;
   border: none;
   padding: $space-sm $space-md;
-  color: $color-white;
+  color: var(--text-primary); // Using theme variable
   font-size: 0.9rem;
   outline: none;
 
   &::placeholder {
-    color: rgba($color-gray-200, 0.5);
+    color: var(--text-secondary); // Using theme variable
+    opacity: 0.5;
   }
 }
 
@@ -232,7 +232,7 @@
 .wrapperColumnTitle {
   font-size: 1.1rem;
   font-weight: 600;
-  color: $color-white;
+  color: var(--text-primary); // Using theme variable
   margin-bottom: $space-lg;
   position: relative;
   display: inline-block;
@@ -254,13 +254,9 @@
   }
 }
 
-// .wrapperSecondTitle {
-//   margin-top: $space-lg;
-// }
-
 .wrapperDivider {
   height: 1px;
-  background: linear-gradient(90deg, rgba($color-white, 0.1), transparent);
+  background: linear-gradient(90deg, var(--border-color), transparent); // Using theme variable
   margin: $space-lg 0;
 }
 
@@ -278,7 +274,7 @@
 }
 
 .wrapperLink {
-  color: $color-gray-200;
+  color: var(--text-secondary); // Using theme variable
   text-decoration: none;
   font-size: 0.95rem;
   display: inline-flex;
@@ -289,7 +285,7 @@
   opacity: 0.8;
 
   &:hover {
-    color: $primary;
+    color: $color-gray-900;
     opacity: 1;
     transform: translateX(8px);
 
@@ -303,14 +299,14 @@
 .wrapperLinkDot {
   width: 4px;
   height: 4px;
-  background: $color-gray-200;
+  background: var(--text-secondary); // Using theme variable
   border-radius: 50%;
   transition: all 0.3s ease;
 }
 
 .wrapperContactBar {
-  background: rgba($color-white, 0.02);
-  border-bottom: 1px solid rgba($color-white, 0.05);
+  background: var(--bg-secondary); // Using theme variable
+  border-bottom: 1px solid var(--border-color); // Using theme variable
   padding: $space-md 0;
 }
 
@@ -341,7 +337,7 @@
   align-items: center;
   gap: $space-xs;
   font-size: 0.9rem;
-  color: $color-gray-200;
+  color: var(--text-secondary); // Using theme variable
   opacity: 0.9;
   transition: all 0.3s ease;
 
@@ -357,7 +353,7 @@
 }
 
 .wrapperContactLink {
-  color: $color-gray-200;
+  color: var(--text-secondary); // Using theme variable
   text-decoration: none;
   transition: color 0.3s ease;
 
@@ -367,14 +363,14 @@
 }
 
 .wrapperContactText {
-  color: $color-gray-200;
+  color: var(--text-secondary); // Using theme variable
 }
 
 .wrapperFooterBottom {
   position: relative;
   z-index: 2;
   padding: $space-lg 0;
-  background: rgba(#000000, 0.3);
+  background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
 }
 
@@ -404,7 +400,7 @@
 .wrapperCopyright {
   p {
     font-size: 0.9rem;
-    color: $color-gray-200;
+    color: var(--text-secondary); // Using theme variable
     opacity: 0.8;
     margin: 0;
     line-height: 1.6;
@@ -434,6 +430,9 @@
   gap: $space-sm;
   flex-wrap: wrap;
   justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .wrapperSocialLink {
@@ -441,13 +440,21 @@
   align-items: center;
   gap: 6px;
   padding: $space-xs $space-sm;
-  background: rgba($color-white, 0.05);
+  background: var(--card-bg); // Using theme variable
   border-radius: 50px;
-  color: $color-gray-200;
+  color: var(--text-secondary); // Using theme variable
   text-decoration: none;
   font-size: 0.85rem;
   transition: all 0.3s ease;
-  border: 1px solid rgba($color-white, 0.05);
+  border: 1px solid var(--border-color); // Using theme variable
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img{
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+  }
 
   &:hover {
     background: var(--social-color);
@@ -477,9 +484,9 @@
   display: flex;
   gap: $space-xs;
   padding: $space-xs $space-sm;
-  background: rgba($color-white, 0.03);
+  background: var(--card-bg); // Using theme variable
   border-radius: 50px;
-  border: 1px solid rgba($color-white, 0.05);
+  border: 1px solid var(--border-color); // Using theme variable
 }
 
 .wrapperPaymentIcon {
@@ -553,6 +560,41 @@
   }
 }
 
+// Dark theme specific adjustments
+.dark-theme {
+  .wrapperFooter {
+    background: var(--bg-primary);
+  }
+
+  .wrapperNewsletter {
+    background: var(--card-bg);
+    
+    &:hover {
+      background: var(--bg-secondary);
+    }
+  }
+
+  .wrapperInputGroup {
+    background: var(--bg-secondary);
+    
+    &:focus-within {
+      background: var(--card-bg);
+    }
+  }
+
+  .wrapperSocialLink {
+    background: var(--card-bg);
+    
+    &:hover {
+      background: var(--social-color);
+    }
+  }
+
+  .wrapperPaymentMethods {
+    background: var(--card-bg);
+  }
+}
+
 // Responsive adjustments
 @media (max-width: $breakpoint-lg) {
   .wrapperContactInfo {
@@ -576,13 +618,6 @@
 
   .wrapperCopyright {
     order: 1;
-  }
-}
-
-// Dark mode optimization
-@media (prefers-color-scheme: light) {
-  .wrapperFooter {
-    background: linear-gradient(135deg, $color-gray-800 0%, $color-gray-900 100%);
   }
 }
 

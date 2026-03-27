@@ -326,7 +326,9 @@ const BingAdsPage = () => {
             </div>
             <div className={styles.wrapperHeroImage}>
               <div className={styles.wrapperImageCircle}>
-                <span className={styles.wrapperImageEmoji}>🪟</span>
+                <span className={styles.wrapperImageEmoji}>
+                  <img src="./bing.png" alt="" />
+                </span>
               </div>
             </div>
           </div>
@@ -536,21 +538,7 @@ const BingAdsPage = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className={styles.wrapperCtaSection}>
-        <div className={styles.wrapperContainer}>
-          <div className={styles.wrapperCtaCard}>
-            <h2 className={styles.wrapperCtaTitle}>Ready to try Bing Ads?</h2>
-            <p className={styles.wrapperCtaText}>Lower costs, less competition, and more ROI.</p>
-            <button className={styles.wrapperCtaButton}>
-              Start with Bing
-              <svg viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </section>
+      
     </div>
   );
 };

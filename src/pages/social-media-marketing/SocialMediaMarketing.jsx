@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import styles from './SocialMediaMarketing.module.scss';
+import { Link } from 'react-router-dom';
 
 const OrganicSocialMediaPage = () => {
   const sectionRef = useRef(null);
@@ -68,14 +69,6 @@ const OrganicSocialMediaPage = () => {
       bestFor: 'B2B, thought leadership, professional services',
       strategy: 'Industry insights, company updates, long-form content',
       color: 'linkedin'
-    },
-    {
-      name: 'TikTok',
-      icon: '🎵',
-      audience: '1B+ monthly active users',
-      bestFor: 'Gen Z, creative brands, viral content',
-      strategy: 'Short-form video, trends, challenges, behind-the-scenes',
-      color: 'tiktok'
     },
     {
       name: 'Facebook',
@@ -301,18 +294,6 @@ const OrganicSocialMediaPage = () => {
                   </div>
                 ))}
               </div>
-
-              <div className={styles.wrapperHeroButtons}>
-                <button className={styles.wrapperPrimaryButton}>
-                  Get Started
-                  <svg viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </button>
-                <button className={styles.wrapperSecondaryButton}>
-                  Watch Demo
-                </button>
-              </div>
             </div>
             <div className={styles.wrapperHeroImage}>
               <div className={styles.wrapperImageCircle}>
@@ -359,7 +340,7 @@ const OrganicSocialMediaPage = () => {
       </section>
 
       {/* Platforms Section */}
-      <section className={styles.wrapperPlatformsSection}>
+      {/* <section className={styles.wrapperPlatformsSection}>
         <div className={styles.wrapperContainer}>
           <div className={styles.wrapperSectionHeader}>
             <span className={styles.wrapperSectionSubtitle}>Platforms We Master</span>
@@ -396,7 +377,7 @@ const OrganicSocialMediaPage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Content Types Section */}
       <section className={styles.wrapperContentSection}>
@@ -570,15 +551,11 @@ const OrganicSocialMediaPage = () => {
               Let's create a custom organic social media strategy that authentically connects with your audience and drives real business results.
             </p>
             <div className={styles.wrapperCtaButtons}>
-              <button className={styles.wrapperCtaPrimary}>
-                Start Your Strategy
-                <svg viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </button>
-              <button className={styles.wrapperCtaSecondary}>
-                Talk to an Expert
-              </button>
+              <Link to="/contact-us">
+                <button className={styles.wrapperCtaSecondary}>
+                  Talk to an Expert
+                </button>
+              </Link>
             </div>
           </div>
         </div>

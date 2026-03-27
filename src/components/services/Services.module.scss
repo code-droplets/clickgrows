@@ -1,11 +1,11 @@
-@import '../../styles/variables.scss';
+@import '../../styles/variables';
 
 .wrapperServicesSection {
   padding: $space-xl * 2 0;
-  background: linear-gradient(135deg, $color-gray-50 0%, $color-white 100%);
+  background: var(--bg-secondary); // Using theme variable
   overflow: hidden;
   position: relative;
-
+  
   &::before {
     content: '';
     position: absolute;
@@ -13,9 +13,9 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, $color-gray-200, transparent);
+    background: linear-gradient(90deg, transparent, var(--border-color), transparent); // Using theme variable
   }
-
+  
   &::after {
     content: '';
     position: absolute;
@@ -23,7 +23,12 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, $color-gray-200, transparent);
+    background: linear-gradient(90deg, transparent, var(--border-color), transparent); // Using theme variable
+  }
+
+  // Dark theme specific background (this will be overridden by CSS variable)
+  .dark-theme & {
+    background: var(--bg-secondary);
   }
 }
 
@@ -63,12 +68,13 @@
   padding: $space-xs $space-md;
   border-radius: 100px;
   margin-bottom: $space-md;
+  border: 2px solid $primary;
 }
 
 .wrapperSectionTitle {
   font-size: 2.5rem;
   font-weight: 700;
-  color: $color-gray-900;
+  color: var(--text-primary); // Using theme variable
   margin-bottom: $space-md;
   line-height: 1.2;
 
@@ -97,7 +103,7 @@
 
 .wrapperSectionDescription {
   font-size: 1.125rem;
-  color: $color-gray-600;
+  color: var(--text-secondary); // Using theme variable
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
@@ -125,15 +131,16 @@
 }
 
 .wrapperServiceCard {
-  background: $color-white;
+  background: var(--card-bg); // Using theme variable
   padding: $space-xl $space-lg;
   border-radius: 24px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 6px var(--shadow-color); // Using theme variable
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
   opacity: 0;
   transform: translateY(30px);
+  border: 1px solid var(--border-color); // Using theme variable
 
   &::before {
     content: '';
@@ -156,7 +163,8 @@
 
   &:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 30px -10px rgba($primary, 0.15);
+    box-shadow: 0 20px 30px -10px var(--shadow-color); // Using theme variable
+    border-color: transparent;
 
     &::before {
       transform: scaleX(1);
@@ -206,14 +214,14 @@
 .wrapperCardTitle {
   font-size: 1.25rem;
   font-weight: 600;
-  color: $color-gray-900;
+  color: var(--text-primary); // Using theme variable
   margin-bottom: $space-sm;
   line-height: 1.4;
 }
 
 .wrapperCardDescription {
   font-size: 0.95rem;
-  color: $color-gray-600;
+  color: var(--text-secondary); // Using theme variable
   margin-bottom: $space-lg;
   line-height: 1.6;
 }
@@ -230,7 +238,7 @@
   align-items: center;
   gap: $space-xs;
   font-size: 0.9rem;
-  color: $color-gray-600;
+  color: var(--text-secondary); // Using theme variable
 }
 
 .wrapperFeatureIcon {
@@ -252,7 +260,7 @@
   gap: $space-xs;
   font-size: 0.95rem;
   font-weight: 500;
-  color: $color-gray-600;
+  color: var(--text-secondary); // Using theme variable
   text-decoration: none;
   transition: all 0.3s ease;
   margin-top: auto;
@@ -267,10 +275,12 @@
   width: 18px;
   height: 18px;
   transition: transform 0.3s ease;
+  filter: var(--arrow-filter); // Using theme variable for arrow color
 }
 
 .wrapperCtaContainer {
-  background: linear-gradient(135deg, $primary 0%, $secondary 100%);
+  // background: linear-gradient(135deg, var(--gradient-start) 0%, var(--body-bg) 100%);
+  background-color: var(--card-bg); // Using theme variable for solid background fallback
   border-radius: 32px;
   padding: $space-xl * 1.5;
   position: relative;
@@ -278,6 +288,9 @@
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.6s;
+  box-shadow: 0 20px 40px -15px var(--shadow-color); // Using theme variable
+  border: 1px solid var(--border-color); // Using theme variable
+
 
   &::before {
     content: '';
@@ -289,6 +302,9 @@
     background: rgba($color-white, 0.1);
     border-radius: 50%;
     transform: rotate(25deg);
+    @media (max-width: $breakpoint-md) {
+     display: none;
+    }
   }
 
   &::after {
@@ -301,6 +317,9 @@
     background: rgba($color-white, 0.1);
     border-radius: 50%;
     transform: rotate(-15deg);
+    @media (max-width: $breakpoint-md) {
+     display: none;
+    }
   }
 
   .wrapperServicesSection.visible & {
@@ -317,7 +336,7 @@
   position: relative;
   z-index: 1;
   text-align: center;
-  color: $color-white;
+  color: var(--text-primary); // Using theme variable
 }
 
 .wrapperCtaTitle {
@@ -325,6 +344,7 @@
   font-weight: 700;
   margin-bottom: $space-sm;
   line-height: 1.2;
+  color: var(--text-tertiary); // Using theme variable
 
   @media (max-width: $breakpoint-md) {
     font-size: 1.5rem;
@@ -336,7 +356,7 @@
   margin-bottom: $space-xl;
   opacity: 0.9;
   line-height: 1.6;
-  color: white;
+  color: var(--text-tertiary); // Using theme variable
 
   @media (max-width: $breakpoint-md) {
     font-size: 1rem;
@@ -347,8 +367,8 @@
   display: inline-flex;
   align-items: center;
   gap: $space-sm;
-  background: $color-white;
-  color: $primary;
+  background: $tertiary; // Using theme variable
+  color: var(--card-bg); // Using theme variable
   border: none;
   padding: $space-md $space-xl;
   font-size: 1rem;
@@ -377,6 +397,7 @@
   width: 18px;
   height: 18px;
   transition: transform 0.3s ease;
+  filter: brightness(0) saturate(100%) invert(30%) sepia(15%) saturate(1000%) hue-rotate(200deg); // This makes arrow match $primary color
 }
 
 // Animation delays for cards
@@ -397,31 +418,33 @@
   }
 }
 
-// Dark mode support (optional)
-@media (prefers-color-scheme: dark) {
-  .wrapperServicesSection {
-    background: linear-gradient(135deg, $color-gray-900 0%, $color-gray-800 100%);
+// Remove the old prefers-color-scheme media query and replace with theme classes
+// Dark theme specific overrides (only needed for elements that don't use CSS variables)
+.dark-theme {
+  .wrapperServiceCard {
+    border-color: var(--border-color);
   }
 
-  .wrapperServiceCard {
-    background: $color-gray-800;
-    border: 1px solid rgba($color-white, 0.05);
+  .wrapperLinkArrow {
+    filter: brightness(0) invert(1); // White arrow in dark mode
+  }
 
-    .wrapperCardTitle {
+  .wrapperCtaButton {
+    background: var(--card-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+
+    &:hover {
+      background: $primary;
       color: $color-white;
     }
-
-    .wrapperCardDescription,
-    .wrapperFeatureItem {
-      color: $color-gray-200;
-    }
   }
 
-  .wrapperSectionTitle {
-    color: $color-white;
+  .wrapperButtonArrow {
+    filter: brightness(0) invert(1); // White arrow in dark mode
   }
 
-  .wrapperSectionDescription {
-    color: $color-gray-200;
+  .wrapperCtaButton:hover .wrapperButtonArrow {
+    filter: brightness(0) invert(1); // Keep white on hover
   }
 }

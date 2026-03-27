@@ -1,9 +1,9 @@
+@import '../../styles/variables';
 
-@import '../../styles/variables.scss';
 .wrapperWorkProcessSection {
   position: relative;
   padding: $space-xl * 2 0;
-  background: linear-gradient(135deg, $color-gray-50 0%, $color-white 100%);
+  background: var(--bg-secondary); // Using theme variable
   overflow: hidden;
 }
 
@@ -34,7 +34,7 @@
   left: 5%;
   width: 300px;
   height: 300px;
-  background-image: radial-gradient($color-gray-200 2px, transparent 2px);
+  background-image: radial-gradient(var(--border-color) 2px, transparent 2px); // Using theme variable
   background-size: 30px 30px;
   opacity: 0.3;
   animation: rotate 30s linear infinite;
@@ -82,8 +82,9 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: $primary;
-  background: rgba($primary, 0.1);
+  color: $white;
+  // background: rgba($primary);
+  border: 2px solid $white;
   padding: $space-xs $space-md;
   border-radius: 100px;
   margin-bottom: $space-md;
@@ -92,7 +93,7 @@
 .wrapperSectionTitle {
   font-size: 2.5rem;
   font-weight: 700;
-  color: $color-gray-900;
+  color: var(--text-primary); // Using theme variable
   margin-bottom: $space-md;
   line-height: 1.2;
 
@@ -113,7 +114,7 @@
     left: 0;
     right: 0;
     height: 8px;
-    background: rgba($primary, 0.2);
+    // background: rgba($color-gray-200, 0.1);
     z-index: -1;
     border-radius: 4px;
     animation: widthPulse 2s ease-in-out infinite;
@@ -127,7 +128,7 @@
 
 .wrapperSectionDescription {
   font-size: 1.125rem;
-  color: $color-gray-600;
+  color: var(--text-secondary); // Using theme variable
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
@@ -154,16 +155,16 @@
 }
 
 .wrapperProcessCard {
-  background: $color-white;
+  background: var(--card-bg); // Using theme variable
   padding: $space-xl;
   border-radius: 24px;
-  box-shadow: 0 10px 30px -5px rgba($color-gray-900, 0.05);
+  box-shadow: 0 10px 30px -5px var(--shadow-color); // Using theme variable
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
   opacity: 0;
   transform: translateY(30px);
-  border: 1px solid rgba($color-gray-200, 0.5);
+  border: 1px solid var(--border-color); // Using theme variable
 
   &::before {
     content: '';
@@ -185,7 +186,7 @@
 
   &:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px -10px rgba($primary, 0.15);
+    box-shadow: 0 20px 40px -10px var(--shadow-color); // Using theme variable
     border-color: transparent;
 
     &::before {
@@ -196,12 +197,6 @@
       color: $primary;
       transform: scale(1.1);
     }
-
-    // .wrapperMetricBadge {
-    //   background: linear-gradient(135deg, $primary 0%, $secondary 100%);
-    //   color: $color-white;
-    //   transform: scale(1.05);
-    // }
   }
 
   .wrapperWorkProcessSection.visible & {
@@ -225,9 +220,13 @@
   font-size: 3rem;
   font-weight: 700;
   line-height: 1;
-  color: $color-gray-200;
+  color: var(--border-color); // Using theme variable
   transition: all 0.3s ease;
-  font-family: 'Poppins', sans-serif;
+  font-family: $font-main;
+
+  .dark-theme & {
+    color: rgba($color-white, 0.1);
+  }
 }
 
 .wrapperCardIcon {
@@ -250,14 +249,14 @@
 .wrapperCardTitle {
   font-size: 1.25rem;
   font-weight: 600;
-  color: $color-gray-900;
+  color: var(--text-primary); // Using theme variable
   margin-bottom: $space-sm;
   line-height: 1.4;
 }
 
 .wrapperCardDescription {
   font-size: 0.95rem;
-  color: $color-gray-600;
+  color: var(--text-secondary); // Using theme variable
   margin-bottom: $space-lg;
   line-height: 1.6;
 }
@@ -271,18 +270,14 @@
 }
 
 .wrapperMetricBadge {
-  background: linear-gradient(135deg, $color-gray-50 0%, $color-white 100%);
+  background: var(--bg-secondary); // Using theme variable
   padding: $space-xs $space-md;
   border-radius: 50px;
-  border: 1px solid rgba($color-gray-200, 0.5);
+  border: 1px solid var(--border-color); // Using theme variable
   display: inline-flex;
   align-items: baseline;
   gap: 6px;
   transition: all 0.3s ease;
-
-//   .primary & { 
-//     &:hover { background: linear-gradient(135deg, $primary 0%, $secondary 100%); }
-//   }
 }
 
 .wrapperMetricValue {
@@ -295,18 +290,23 @@
   .purple & { color: $color-purple-400; }
   .orange & { color: $color-orange-400; }
   .teal & { color: $color-teal-400; }
+
+  .dark-theme & {
+    color: $primary;
+  }
 }
 
 .wrapperMetricLabel {
   font-size: 0.875rem;
   font-weight: 500;
-  color: $color-gray-600;
+  color: var(--text-secondary); // Using theme variable
 }
 
 .wrapperMetricSubtext {
   font-size: 0.875rem;
-  color: $color-gray-500;
+  color: var(--text-secondary); // Using theme variable
   font-style: italic;
+  opacity: 0.8;
 }
 
 .wrapperCardLine {
@@ -327,7 +327,7 @@
 .wrapperStatsTitle {
   font-size: 1.5rem;
   font-weight: 600;
-  color: $color-gray-900;
+  color: var(--text-primary); // Using theme variable
   margin-bottom: $space-xl;
   position: relative;
   display: inline-block;
@@ -340,7 +340,7 @@
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, $primary, $color-purple-400);
+    background: linear-gradient(90deg, $primary, $secondary);
     border-radius: 2px;
   }
 }
@@ -361,21 +361,21 @@
 }
 
 .wrapperStatCard {
-  background: $color-white;
+  background: var(--card-bg); // Using theme variable
   padding: $space-lg;
   border-radius: 20px;
-  box-shadow: 0 5px 20px -5px rgba($color-gray-900, 0.05);
+  box-shadow: 0 5px 20px -5px var(--shadow-color); // Using theme variable
   display: flex;
   align-items: center;
   gap: $space-md;
   transition: all 0.3s ease;
-  border: 1px solid rgba($color-gray-200, 0.5);
+  border: 1px solid var(--border-color); // Using theme variable
   opacity: 0;
   transform: translateY(20px);
 
   &:hover {
     transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 15px 30px -10px rgba($primary, 0.15);
+    box-shadow: 0 15px 30px -10px var(--shadow-color); // Using theme variable
     border-color: $primary;
 
     .wrapperStatIcon {
@@ -413,25 +413,26 @@
   display: block;
   font-size: 1.75rem;
   font-weight: 700;
-  color: $primary;
+  color: $tertiary;
   line-height: 1.2;
   margin-bottom: 4px;
 }
 
 .wrapperStatLabel {
   font-size: 0.875rem;
-  color: $color-gray-600;
+  color: var(--text-secondary); // Using theme variable
 }
 
 .wrapperCtaBanner {
-  background: linear-gradient(135deg, $color-white 0%, $color-gray-50 100%);
+  background-color: var(--card-bg); // Using theme variable for solid background fallback
+
   border-radius: 32px;
   padding: $space-xl * 1.5;
   text-align: center;
   position: relative;
   overflow: hidden;
   border: 1px solid rgba($primary, 0.1);
-  box-shadow: 0 20px 40px -15px rgba($primary, 0.2);
+  box-shadow: 0 20px 40px -15px var(--shadow-color); // Using theme variable
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.8s;
@@ -483,9 +484,9 @@
 .wrapperCtaTitle {
   font-size: 2rem;
   font-weight: 700;
-  color: $color-gray-900;
   margin-bottom: $space-sm;
   line-height: 1.2;
+  color: var(--text-tertiary); // Using theme variable
 
   @media (max-width: $breakpoint-md) {
     font-size: 1.5rem;
@@ -494,8 +495,8 @@
 
 .wrapperCtaText {
   font-size: 1.125rem;
-  color: $color-gray-600;
   margin-bottom: $space-xl;
+  color: var(--text-tertiary); // Using theme variable
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
@@ -509,8 +510,8 @@
   display: inline-flex;
   align-items: center;
   gap: $space-sm;
-  background: linear-gradient(135deg, $primary 0%, $secondary 100%);
-  color: $color-white;
+  background: $tertiary; // Using theme variable
+  color: var(--card-bg); // Using theme variable
   border: none;
   padding: $space-md $space-xl;
   font-size: 1rem;
@@ -518,22 +519,29 @@
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 20px -5px rgba($primary, 0.3);
 
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 30px -5px rgba($primary, 0.4);
-    gap: $space-md;
 
-    svg {
-      transform: translateX(4px);
-    }
-  }
 
   svg {
     width: 18px;
     height: 18px;
     transition: transform 0.3s ease;
+    fill: $color-white;
+  }
+}
+
+// Dark theme specific adjustments
+.dark-theme {
+  .wrapperPatternDots {
+    background-image: radial-gradient(rgba($color-white, 0.2) 2px, transparent 2px);
+  }
+
+  .wrapperMetricBadge {
+    background: var(--card-bg);
+  }
+
+  .wrapperCtaBanner {
+    border-color: rgba($primary, 0.2);
   }
 }
 

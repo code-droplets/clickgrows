@@ -23,7 +23,7 @@ const WebDevelopmentPage = () => {
     {
       id: 1,
       name: 'WordPress',
-      icon: '🔷',
+      icon: './wordpress.png',
       description: 'Flexible content management for blogs, business sites, and complex portals.',
       bestFor: ['Blogs & Magazines', 'Business Websites', 'News Portals', 'Membership Sites', 'Learning Management'],
       features: [
@@ -40,7 +40,7 @@ const WebDevelopmentPage = () => {
     {
       id: 2,
       name: 'Shopify',
-      icon: '🛍️',
+      icon: './shopify.png',
       description: 'Powerful e-commerce platform for businesses ready to sell online.',
       bestFor: ['Online Stores', 'Dropshipping', 'Digital Products', 'Print-on-Demand', 'Multi-channel Selling'],
       features: [
@@ -57,7 +57,7 @@ const WebDevelopmentPage = () => {
     {
       id: 3,
       name: 'Custom Coded',
-      icon: '⚙️',
+      icon: './browser.png',
       description: 'Fully bespoke solutions built from scratch for unique business needs.',
       bestFor: ['Complex Applications', 'Marketplaces', 'SaaS Platforms', 'Enterprise Solutions', 'Custom Portals'],
       features: [
@@ -418,9 +418,15 @@ const WebDevelopmentPage = () => {
                 <span className={styles.wrapperImageEmoji}>💻</span>
               </div>
               <div className={styles.wrapperFloatingIcons}>
-                <span className={styles.wrapperFloatingIcon}>🔷</span>
-                <span className={styles.wrapperFloatingIcon}>🛍️</span>
-                <span className={styles.wrapperFloatingIcon}>⚙️</span>
+                <span className={styles.wrapperFloatingIcon}>
+                  <img src="./wordpress.png" alt="WordPress" />
+                </span>
+                <span className={styles.wrapperFloatingIcon}>
+                  <img src="./shopify.png" alt="Shopify" />
+                </span>
+                <span className={styles.wrapperFloatingIcon}>
+                  <img src="./browser.png" alt="Custom" />
+                </span>
               </div>
             </div>
           </div>
@@ -447,7 +453,7 @@ const WebDevelopmentPage = () => {
                 style={{ transitionDelay: `${index * 0.15}s` }}
               >
                 <div className={styles.wrapperPlatformHeader}>
-                  <span className={styles.wrapperPlatformIcon}>{platform.icon}</span>
+                  <span className={styles.wrapperPlatformIcon}><img src={platform.icon} alt={platform.name} /></span>
                   <h3 className={styles.wrapperPlatformName}>{platform.name}</h3>
                   <span className={styles.wrapperPlatformStats}>{platform.stats}</span>
                 </div>
@@ -472,47 +478,12 @@ const WebDevelopmentPage = () => {
                     </div>
                   ))}
                 </div>
-
-                <button className={styles.wrapperPlatformButton}>
-                  Learn More
-                  <svg viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                  </svg>
-                </button>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Comparison Table */}
-      <section className={styles.wrapperComparisonSection}>
-        <div className={styles.wrapperContainer}>
-          <div className={styles.wrapperSectionHeader}>
-            <h2 className={styles.wrapperSectionTitle}>Platform <span className={styles.wrapperHighlight}>Comparison</span></h2>
-            <p className={styles.wrapperSectionDescription}>
-              See how each platform stacks up for different needs
-            </p>
-          </div>
-
-          <div className={styles.wrapperComparisonTable}>
-            <div className={styles.wrapperComparisonHeader}>
-              <div className={styles.wrapperComparisonCell}>Feature</div>
-              <div className={`${styles.wrapperComparisonCell} ${styles.wordpress}`}>WordPress</div>
-              <div className={`${styles.wrapperComparisonCell} ${styles.shopify}`}>Shopify</div>
-              <div className={`${styles.wrapperComparisonCell} ${styles.custom}`}>Custom</div>
-            </div>
-            {comparisonFeatures.map((item, index) => (
-              <div key={index} className={styles.wrapperComparisonRow}>
-                <div className={styles.wrapperComparisonCell}>{item.feature}</div>
-                <div className={styles.wrapperComparisonCell}>{item.wordpress}</div>
-                <div className={styles.wrapperComparisonCell}>{item.shopify}</div>
-                <div className={styles.wrapperComparisonCell}>{item.custom}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* WordPress Deep Dive */}
       <section className={styles.wrapperWordPressSection}>
@@ -690,28 +661,7 @@ const WebDevelopmentPage = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className={styles.wrapperCtaSection}>
-        <div className={styles.wrapperContainer}>
-          <div className={styles.wrapperCtaCard}>
-            <h2 className={styles.wrapperCtaTitle}>Ready to Build Your Website?</h2>
-            <p className={styles.wrapperCtaText}>
-              Whether you need a WordPress site, Shopify store, or custom platform—we're here to help.
-            </p>
-            {/* <div className={styles.wrapperCtaButtons}>
-              <button className={styles.wrapperCtaPrimary}>
-                Start Your Project
-                <svg viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </button>
-              <button className={styles.wrapperCtaSecondary}>
-                Schedule a Consultation
-              </button>
-            </div> */}
-          </div>
-        </div>
-      </section>
+     
     </div>
   );
 };

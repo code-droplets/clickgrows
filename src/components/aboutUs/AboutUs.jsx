@@ -51,8 +51,8 @@ const AboutUs = () => {
                   >
                     <div className={styles.hero__list_icon}>
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <circle cx="12" cy="12" r="12" fill="#4f46e5"/>
-                        <path d="M7 12L10.5 15.5L17 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <circle cx="12" cy="12" r="12" fill="#C2A68C"/>
+                        <path d="M7 12L10.5 15.5L17 9" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                     </div>
                     <span>{point}</span>

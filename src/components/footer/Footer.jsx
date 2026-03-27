@@ -40,19 +40,19 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { name: 'LinkedIn', icon: '💼', url: '#', color: '#0077b5' },
-    // { name: 'Twitter', icon: '🐦', url: '#', color: '#1da1f2' },
-    { name: 'Facebook', icon: '📘', url: '#', color: '#4267b2' },
-    { name: 'Instagram', icon: '📷', url: '#', color: '#e4405f' },
-    { name: 'YouTube', icon: '▶️', url: '#', color: '#ff0000' },
-    // { name: 'TikTok', icon: '🎵', url: '#', color: '#000000' },
+    { name: 'LinkedIn', icon: './linkedin.png', url: '#', color: '#0077b5' },
+    // { name: 'Twitter', icon: './twitter.png', url: '#', color: '#1da1f2' },
+    { name: 'Facebook', icon: './facebook.png', url: '#', color: '#4267b2' },
+    { name: 'Instagram', icon: './instagram.png', url: '#', color: '#e4405f' },
+    { name: 'YouTube', icon: './youtube.png', url: '#', color: '#ff0000' },
+    // { name: 'TikTok', icon: './tiktok.png', url: '#', color: '#000000' },
   ];
 
   const contactInfo = {
-    email: 'hello@digitalmarketing.com',
-    phone: '+1 (555) 123-4567',
+    email: 'clickgrows1@gmail.com',
+    phone: '+91 7065887777',
     address: '123 Innovation Street, San Francisco, CA 94105',
-    hours: 'Mon - Fri: 9:00 AM - 6:00 PM PST',
+    hours: 'Mon - Fri: 9:00 AM - 9:00 PM IST',
   };
 
   useEffect(() => {
@@ -92,8 +92,8 @@ const Footer = () => {
           >
             <div className={styles.wrapperBrandContent}>
               <div className={styles.wrapperLogo}>
-                <span className={styles.wrapperLogoIcon}>🚀</span>
-                <span className={styles.wrapperLogoText}>Click<span>Grows</span></span>
+                <span className={styles.wrapperLogoIcon}><img src="./logo.png" alt="ClickGrows Logo" /></span>
+                <span className={styles.wrapperLogoText}>ClickGrows</span>
               </div>
               <p className={styles.wrapperBrandDescription}>
                 Transforming businesses through innovative digital marketing strategies that drive growth, engagement, and measurable results.
@@ -245,7 +245,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   aria-label={`Follow us on ${social.name}`}
                 >
-                  <span className={styles.wrapperSocialIcon}>{social.icon}</span>
+                  <span className={styles.wrapperSocialIcon}><img src={social.icon} alt={social.name} /></span>
                   <span className={styles.wrapperSocialName}>{social.name}</span>
                 </a>
               ))}

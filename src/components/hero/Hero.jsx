@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import style from './Hero.module.scss';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -65,10 +66,12 @@ const Hero = () => {
               <span className={style.hero__title_main}>Scaling Brands with Strategic Advertising</span>
             </h1>
 
-            <button className={style.hero__cta}>
-              <span className={style.hero__cta_icon}>→</span>
-              Get Your Free Marketing Strategy
-            </button>
+            <Link to="/contact-us">
+              <button className={style.hero__cta}>
+                <span className={style.hero__cta_icon}>→</span>
+                Connect with Our Experts
+              </button>
+            </Link>
 
             <div className={style.hero__rating}>
               <p className={style.hero__rating_text}>Trusted by 500+ Brands for Marketing & Growth</p>

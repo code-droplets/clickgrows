@@ -2,31 +2,44 @@
 @import '../../styles/mixins';
 
 .navbar {
-  background: $white;
-  padding: .5rem 1rem;
+  background: var(--bg-secondary);
+  padding: $space-xs $space-sm;
   position: sticky;
   top: 0;
   z-index: 1000;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px var(--shadow-color);
   animation: slideDown 0.6s ease-out 0.4s both;
   width: 100%;
+  font-family: $font-main;
+
+  &__light {
+    background: $primary; // Light brown from your variables
+  }
+
+  &__dark {
+    background: linear-gradient(135deg, $color-gray-900 0%, $color-gray-800 100%);
+  }
+
   &__scrolled {
-    padding: 0.75rem 0;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    background: rgba(255, 255, 255, 0.98);
+    padding: $space-xs 0;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    background: var(--nav-bg);
     backdrop-filter: blur(10px);
   }
+
   &__arrow_image {
     width: 10px;
     height: auto;
-    margin-left: 0.10rem;
+    margin-left: $space-xs / 2;
     margin-top: 0.40rem;
     transition: transform 0.3s ease;
+    filter: var(--arrow-filter);
   }
+
   &__wrapper {
     @include flex-justify-between;
-    gap: 2rem;
+    gap: $space-lg;
   }
 
   &__logo {
@@ -56,7 +69,7 @@
   &__menu {
     display: none;
     list-style: none;
-    gap: 2rem;
+    gap: $space-lg;
     margin: 0;
 
     @include respond($breakpoint-lg) {
@@ -71,7 +84,7 @@
     &__dropdown {
       .navbar__arrow {
         font-size: 0.7rem;
-        margin-left: 0.25rem;
+        margin-left: $space-xs / 2;
         transition: transform 0.3s ease;
       }
 
@@ -82,11 +95,11 @@
   }
 
   &__link {
-    color: $color-gray-800;
+    color: var(--link-color);
     text-decoration: none;
     font-weight: 700;
     font-size: 0.95rem;
-    padding: 0.5rem 0;
+    padding: $space-xs 0;
     position: relative;
     transition: all 0.3s ease;
     background: none;
@@ -102,13 +115,13 @@
       left: 50%;
       width: 0;
       height: 2px;
-      background: linear-gradient(90deg, #4f46e5, #6660d7);
+      background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       transform: translateX(-50%);
     }
 
     &:hover {
-      color: $color-gray-900;
+      color: var(--link-hover);
 
       &::after {
         width: 100%;
@@ -120,19 +133,19 @@
     position: absolute;
     top: 100%;
     left: 0;
-    background: $white;
+    background: var(--dropdown-bg);
     min-width: 220px;
-    padding: 1rem 0;
+    padding: $space-sm 0;
     border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-    margin-top: 0.5rem;
+    box-shadow: 0 10px 40px var(--shadow-color);
+    margin-top: $space-xs;
     animation: dropdownSlide 0.3s ease-out;
     z-index: 100;
 
     a {
       display: block;
-      padding: 0.75rem 1.5rem;
-      color: $color-gray-600;
+      padding: $space-xs $space-md;
+      color: var(--text-secondary);
       text-decoration: none;
       transition: all 0.3s ease;
       font-size: 0.9rem;
@@ -146,14 +159,14 @@
         transform: translateY(-50%);
         width: 3px;
         height: 0;
-        background: linear-gradient(180deg, #4f46e5, #6660d7);
+        background: linear-gradient(180deg, var(--gradient-start), var(--gradient-end));
         transition: height 0.3s ease;
       }
 
       &:hover {
-        background: rgba(79, 70, 229, 0.08);
-        color: $color-gray-900;
-        padding-left: 1.75rem;
+        background: rgba($color-primary, 0.08);
+        color: var(--link-hover);
+        padding-left: $space-lg;
 
         &::before {
           height: 60%;
@@ -162,28 +175,54 @@
     }
   }
 
-  &__cta {
+  &__actions {
     display: none;
+    align-items: center;
+    gap: $space-sm;
 
     @include respond($breakpoint-lg) {
-      display: block;
+      display: flex;
       animation: fadeInRight 0.8s ease-out 0.7s both;
     }
+  }
+
+  &__theme_toggle {
+    background: none;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    color: var(--text-primary);
+
+    &:hover {
+      transform: rotate(15deg);
+      border-color: var(--gradient-start);
+    }
+  }
+
+  &__cta {
+    display: block;
   }
 
   &__cta_btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.75rem;
-    background: linear-gradient(135deg, #4f46e5 0%, #6660d7 100%);
+    gap: $space-xs;
+    padding: $space-xs $space-lg;
+    background: linear-gradient(135deg, $tertiary 0%, $secondary 100%);
     color: $color-gray-50;
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9rem;
     border-radius: 50px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+    box-shadow: 0 4px 15px rgba($color-primary, 0.3);
     position: relative;
     overflow: hidden;
 
@@ -194,13 +233,13 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      background: linear-gradient(90deg, transparent, rgba($white, 0.4), transparent);
       transition: left 0.6s ease;
     }
 
     &:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+      box-shadow: 0 8px 25px rgba($color-primary, 0.4);
       
       &::before {
         left: 100%;
@@ -216,7 +255,7 @@
     }
   }
 
-  &__cta-icon {
+  &__cta_icon {
     font-size: 1.2rem;
     transition: transform 0.3s ease;
   }
@@ -229,7 +268,7 @@
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0.5rem;
+    padding: $space-xs;
     z-index: 1001;
 
     @include respond($breakpoint-lg) {
@@ -239,7 +278,7 @@
     span {
       width: 28px;
       height: 3px;
-      background: $color-gray-800;
+      background: var(--text-primary);
       border-radius: 3px;
       transition: all 0.3s ease;
     }
@@ -260,72 +299,134 @@
     }
 
     &:hover span {
-      background: #4f46e5;
+      background: $color-primary;
     }
   }
 
   // Mobile Menu
-  &__mobile-menu {
+  &__mobile_menu {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background: $white;
+    background: var(--bg-primary);
     padding-top: 80px;
     animation: mobileSlideIn 0.4s ease-out;
     overflow-y: auto;
+    z-index: 1000;
 
     @include respond($breakpoint-lg) {
       display: none;
     }
   }
 
+  &__mobile_header {
+    padding: $space-sm $space-lg;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: $space-sm;
+  }
+
+  &__mobile_theme_toggle {
+    background: none;
+    border: 2px solid var(--border-color);
+    border-radius: 30px;
+    padding: $space-xs $space-md;
+    width: 100%;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $space-xs;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: $color-primary;
+      background: rgba($color-primary, 0.1);
+    }
+  }
+
   &__mobile_list {
     list-style: none;
-    padding: 2rem;
+    padding: 0 $space-lg $space-lg;
     margin: 0;
   }
 
   &__mobile_item {
-    margin-bottom: 1rem;
+    margin-bottom: $space-xs;
     animation: fadeInUp 0.5s ease-out backwards;
 
-    @for $i from 1 through 6 {
+    @for $i from 1 through 8 {
       &:nth-child(#{$i}) {
         animation-delay: #{0.1 * $i}s;
       }
     }
 
-    a {
+    a, button {
       display: block;
-      padding: 1rem;
-      color: $color-gray-800;
+      padding: $space-sm;
+      color: var(--text-primary);
       text-decoration: none;
       font-size: 1.1rem;
       font-weight: 500;
       border-radius: 8px;
       transition: all 0.3s ease;
+      width: 100%;
+      text-align: left;
+      // background: none;
+      border: none;
+      cursor: pointer;
 
       &:hover {
-        background: rgba(79, 70, 229, 0.1);
-        color: $color-gray-900;
-        padding-left: 1.5rem;
+        background: rgba($white, 0.1);
+        color: var(--link-hover);
+        padding-left: $space-lg;
       }
     }
   }
 
+  &__mobile_dropdown_btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    background-color: none;
+  }
+
+  &__mobile_arrow {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+
+    &__active {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__mobile_submenu {
+    margin-top: $space-xs;
+    margin-left: $space-sm;
+    padding-left: $space-sm;
+    border-left: 2px solid $tertiary;
+    animation: slideDown 0.3s ease;
+
+    a {
+      padding: $space-xs $space-sm;
+      font-size: 1rem;
+    }
+  }
+
   &__mobile_cta {
-    background: linear-gradient(135deg, #4f46e5 0%, #6660d7 100%);
+    // background: linear-gradient(135deg, $tertiary 0%, $secondary 100%);
+    background-color: var(--bg-tertiary);
     color: $color-gray-50 !important;
     font-weight: 600;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+    box-shadow: 0 4px 15px rgba($primary, 0.3);
+    margin-top: $space-sm;
     
-    &:hover {
-      transform: scale(1.02);
-      color: $color-primary !important;
-    }
+   
+    
   }
 }
 
@@ -353,7 +454,7 @@
 @keyframes fadeInLeft {
   from {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateX(-$space-lg);
   }
   to {
     opacity: 1;
@@ -364,7 +465,7 @@
 @keyframes fadeInRight {
   from {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateX($space-lg);
   }
   to {
     opacity: 1;
@@ -375,7 +476,7 @@
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY($space-md);
   }
   to {
     opacity: 1;
@@ -386,7 +487,7 @@
 @keyframes dropdownSlide {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-$space-xs);
   }
   to {
     opacity: 1;

@@ -23,7 +23,6 @@ const StatsSection = () => {
         {/* Header */}
         <div className={styles.statsSection__header}>
           <div className={styles.statsSection__badge}>
-            <span className={styles.statsSection__badge_icon}>⚡</span>
             <span className={styles.statsSection__badge_text}>
               RESULTS THAT DRIVE REAL BUSINESS GROWTH
             </span>

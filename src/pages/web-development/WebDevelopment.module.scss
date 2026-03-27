@@ -3,7 +3,7 @@
 
 .wrapperWebDevPage {
   position: relative;
-  background: $color-white;
+  background: var(--bg-secondary); // Using theme variable
   overflow-x: hidden;
 }
 
@@ -22,7 +22,7 @@
 // Hero Section
 .wrapperHeroSection {
   padding: $space-xl * 2 0;
-  background: linear-gradient(135deg, $color-gray-50 0%, $color-white 100%);
+  background: var(--bg-secondary); // Using theme variable
   min-height: 90vh;
   display: flex;
   align-items: center;
@@ -63,8 +63,8 @@
   width: 400px;
   height: 400px;
   background-image: 
-    linear-gradient(rgba($primary, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba($primary, 0.03) 1px, transparent 1px);
+    linear-gradient(var(--border-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-color) 1px, transparent 1px); // Using theme variable
   background-size: 40px 40px;
   opacity: 0.3;
   animation: rotate 30s linear infinite;
@@ -116,12 +116,14 @@
   padding: $space-xs $space-md;
   border-radius: 100px;
   margin-bottom: $space-md;
+  border: 2px solid $primary;
+
 }
 
 .wrapperHeroTitle {
   font-size: 3.5rem;
   font-weight: 700;
-  color: $color-gray-900;
+  color: var(--text-primary); // Using theme variable
   margin-bottom: $space-sm;
   line-height: 1.2;
 
@@ -138,7 +140,7 @@
 
 .wrapperHeroDescription {
   font-size: 1rem;
-  color: $color-gray-600;
+  color: var(--text-secondary); // Using theme variable
   margin-bottom: $space-xl;
   line-height: 1.6;
   max-width: 500px;
@@ -162,21 +164,21 @@
 .wrapperHeroStat {
   text-align: center;
   padding: $space-sm;
-  background: rgba($color-white, 0.8);
+  background: var(--card-bg); // Using theme variable
   border-radius: 12px;
-  border: 1px solid $color-gray-200;
+  border: 1px solid var(--border-color); // Using theme variable
 }
 
 .wrapperStatValue {
   display: block;
   font-size: 1.5rem;
   font-weight: 700;
-  color: $primary;
+  color: $tertiary;
 }
 
 .wrapperStatLabel {
   font-size: 0.75rem;
-  color: $color-gray-600;
+  color: var(--text-secondary); // Using theme variable
 }
 
 .wrapperHeroButtons {
@@ -196,7 +198,7 @@
   display: inline-flex;
   align-items: center;
   gap: $space-xs;
-  background: linear-gradient(135deg, $primary 0%, $secondary 100%);
+  background: var(--cta-gradient); // Using theme variable
   color: $color-white;
   border: none;
   padding: $space-md $space-xl;
@@ -228,8 +230,8 @@
   display: inline-flex;
   align-items: center;
   background: transparent;
-  color: $color-gray-900;
-  border: 2px solid $color-gray-200;
+  color: var(--text-primary); // Using theme variable
+  border: 2px solid var(--border-color); // Using theme variable
   padding: $space-md $space-xl;
   font-size: 1rem;
   font-weight: 600;
@@ -261,8 +263,8 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  border: 4px solid $color-white;
-  box-shadow: 0 20px 40px -10px rgba($primary, 0.2);
+  border: 4px solid var(--card-bg); // Using theme variable
+  box-shadow: 0 20px 40px -10px var(--shadow-color); // Using theme variable
 
   @media (max-width: $breakpoint-md) {
     width: 250px;
@@ -289,6 +291,10 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
+  img{
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .wrapperFloatingIcon {
@@ -331,12 +337,13 @@
   padding: $space-xs $space-md;
   border-radius: 100px;
   margin-bottom: $space-md;
+  border: 2px solid $primary;
 }
 
 .wrapperSectionTitle {
   font-size: 2.5rem;
   font-weight: 700;
-  color: $color-gray-900;
+  color: var(--text-primary); // Using theme variable
   margin-bottom: $space-sm;
   line-height: 1.2;
 
@@ -364,7 +371,7 @@
 
 .wrapperSectionDescription {
   font-size: 1rem;
-  color: $color-gray-600;
+  color: var(--text-secondary); // Using theme variable
   max-width: 600px;
   margin: 0 auto;
 }
@@ -372,7 +379,7 @@
 // Platforms Section
 .wrapperPlatformsSection {
   padding: $space-xl * 2 0;
-  background: $color-white;
+  background: var(--bg-secondary); // Using theme variable
 }
 
 .wrapperPlatformsGrid {
@@ -390,16 +397,17 @@
 }
 
 .wrapperPlatformCard {
-  background: $color-white;
+  background: var(--card-bg); // Using theme variable
   padding: $space-xl;
   border-radius: 24px;
-  border: 1px solid $color-gray-200;
+  border: 1px solid var(--border-color); // Using theme variable
   transition: all 0.3s ease;
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 5px 20px -5px var(--shadow-color); // Using theme variable
 
   &.visible {
     opacity: 1;
@@ -424,7 +432,7 @@
 
   &:hover {
     transform: translateY(-10px);
-    box-shadow: 0 30px 50px -15px rgba($color-gray-900, 0.1);
+    box-shadow: 0 30px 50px -15px var(--shadow-color); // Using theme variable
 
     &::before {
       transform: scaleX(1);
@@ -442,18 +450,22 @@
 
 .wrapperPlatformIcon {
   font-size: 2.5rem;
+  img{
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .wrapperPlatformName {
   font-size: 1.5rem;
   font-weight: 700;
-  color: $color-gray-900;
+  color: var(--text-primary); // Using theme variable
 }
 
 .wrapperPlatformStats {
   font-size: 0.8rem;
-  color: $color-gray-500;
-  background: $color-gray-50;
+  color: $white; // Using theme variable
+  background: var(--bg-secondary); // Using theme variable
   padding: 4px $space-sm;
   border-radius: 20px;
   margin-left: auto;
@@ -461,7 +473,7 @@
 
 .wrapperPlatformDescription {
   font-size: 0.95rem;
-  color: $color-gray-600;
+  color: var(--text-secondary); // Using theme variable
   margin-bottom: $space-md;
   line-height: 1.6;
 }
@@ -472,7 +484,7 @@
   strong {
     display: block;
     font-size: 0.9rem;
-    color: $color-gray-800;
+    color: var(--text-primary); // Using theme variable
     margin-bottom: $space-xs;
   }
 }
@@ -485,11 +497,11 @@
 
 .wrapperBestForTag {
   font-size: 0.8rem;
-  color: $color-gray-600;
-  background: $color-gray-50;
+  color: $white; // Using theme variable
+  background: var(--bg-secondary); // Using theme variable
   padding: 4px $space-sm;
   border-radius: 20px;
-  border: 1px solid $color-gray-200;
+  border: 1px solid var(--border-color); // Using theme variable
 }
 
 .wrapperPlatformFeatures {
@@ -501,7 +513,7 @@
   align-items: center;
   gap: 8px;
   font-size: 0.9rem;
-  color: $color-gray-800;
+  color: var(--text-primary); // Using theme variable
   margin-bottom: 8px;
 
   svg {
@@ -543,30 +555,31 @@
 // Comparison Section
 .wrapperComparisonSection {
   padding: $space-xl * 2 0;
-  background: $color-gray-50;
+  background: var(--bg-secondary); // Using theme variable
 }
 
 .wrapperComparisonTable {
   max-width: 800px;
   margin: 0 auto;
-  background: $color-white;
+  background: var(--card-bg); // Using theme variable
   border-radius: 20px;
   overflow: hidden;
-  border: 1px solid $color-gray-200;
+  border: 1px solid var(--border-color); // Using theme variable
 }
 
 .wrapperComparisonHeader {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
-  background: $color-gray-50;
+  background: var(--bg-secondary); // Using theme variable
   font-weight: 700;
-  border-bottom: 2px solid $color-gray-200;
+  border-bottom: 2px solid var(--border-color); // Using theme variable
+  color: var(--text-primary); // Using theme variable
 }
 
 .wrapperComparisonRow {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
-  border-bottom: 1px solid $color-gray-200;
+  border-bottom: 1px solid var(--border-color); // Using theme variable
 
   &:last-child {
     border-bottom: none;
@@ -576,6 +589,7 @@
 .wrapperComparisonCell {
   padding: $space-md;
   font-size: 0.95rem;
+  color: var(--text-secondary); // Using theme variable
 
   &.wordpress { color: #21759b; }
   &.shopify { color: #96bf48; }
@@ -587,15 +601,15 @@
 .wrapperShopifySection,
 .wrapperCustomSection {
   padding: $space-xl * 2 0;
-  background: $color-white;
+  background: var(--bg-secondary); // Using theme variable
 }
 
 .wrapperShopifySection {
-  background: $color-gray-50;
+  background: var(--bg-secondary); // Using theme variable
 }
 
 .wrapperCustomSection {
-  background: $color-white;
+  background: var(--bg-secondary); // Using theme variable
 }
 
 .wrapperFeaturesGrid {
@@ -613,23 +627,24 @@
 }
 
 .wrapperFeatureCategory {
-  background: $color-white;
+  background: var(--card-bg); // Using theme variable
   padding: $space-lg;
   border-radius: 16px;
-  border: 1px solid $color-gray-200;
+  border: 1px solid var(--border-color); // Using theme variable
   transition: all 0.3s ease;
+  box-shadow: 0 5px 20px -5px var(--shadow-color); // Using theme variable
 
   &:hover {
     transform: translateY(-5px);
     border-color: $primary;
-    box-shadow: 0 10px 30px -10px rgba($primary, 0.1);
+    box-shadow: 0 10px 30px -10px var(--shadow-color); // Using theme variable
   }
 }
 
 .wrapperFeatureCategoryTitle {
   font-size: 1.1rem;
   font-weight: 600;
-  color: $color-gray-900;
+  color: var(--text-primary); // Using theme variable
   margin-bottom: $space-md;
   padding-bottom: $space-xs;
   border-bottom: 2px solid rgba($primary, 0.2);
@@ -643,7 +658,7 @@
 
 .wrapperFeatureListItem {
   font-size: 0.9rem;
-  color: $color-gray-800;
+  color: var(--text-secondary); // Using theme variable
   margin-bottom: $space-xs;
   padding-left: $space-sm;
   position: relative;
@@ -660,7 +675,7 @@
 // Process Section
 .wrapperProcessSection {
   padding: $space-xl * 2 0;
-  background: $color-gray-50;
+  background: var(--bg-secondary); // Using theme variable
 }
 
 .wrapperProcessGrid {
@@ -678,12 +693,13 @@
 }
 
 .wrapperProcessCard {
-  background: $color-white;
+  background: var(--card-bg); // Using theme variable
   padding: $space-xl;
   border-radius: 20px;
-  border: 1px solid $color-gray-200;
+  border: 1px solid var(--border-color); // Using theme variable
   position: relative;
   transition: all 0.3s ease;
+  box-shadow: 0 5px 20px -5px var(--shadow-color); // Using theme variable
 
   &:hover {
     transform: translateY(-5px);
@@ -704,13 +720,13 @@
 .wrapperProcessTitle {
   font-size: 1.2rem;
   font-weight: 600;
-  color: $color-gray-900;
+  color: var(--text-primary); // Using theme variable
   margin-bottom: $space-xs;
 }
 
 .wrapperProcessDescription {
   font-size: 0.9rem;
-  color: $color-gray-600;
+  color: var(--text-secondary); // Using theme variable
   margin-bottom: $space-md;
   line-height: 1.5;
 }
@@ -723,8 +739,8 @@
 
 .wrapperProcessTag {
   font-size: 0.75rem;
-  color: $primary;
-  background: rgba($primary, 0.1);
+  color: $tertiary;
+  background: $primary;
   padding: 2px $space-xs;
   border-radius: 20px;
 }
@@ -732,7 +748,7 @@
 // Why Choose Us
 .wrapperWhySection {
   padding: $space-xl * 2 0;
-  background: $color-white;
+  background: var(--bg-secondary); // Using theme variable
 }
 
 .wrapperWhyGrid {
@@ -752,10 +768,11 @@
 .wrapperWhyCard {
   text-align: center;
   padding: $space-xl $space-lg;
-  background: $color-white;
+  background: var(--card-bg); // Using theme variable
   border-radius: 20px;
-  border: 1px solid $color-gray-200;
+  border: 1px solid var(--border-color); // Using theme variable
   transition: all 0.3s ease;
+  box-shadow: 0 5px 20px -5px var(--shadow-color); // Using theme variable
 
   &:hover {
     transform: translateY(-5px);
@@ -772,20 +789,20 @@
 .wrapperWhyTitle {
   font-size: 1.1rem;
   font-weight: 600;
-  color: $color-gray-900;
+  color: var(--text-primary); // Using theme variable
   margin-bottom: $space-xs;
 }
 
 .wrapperWhyDescription {
   font-size: 0.9rem;
-  color: $color-gray-600;
+  color: var(--text-secondary); // Using theme variable
   line-height: 1.5;
 }
 
 // Tech Stack
 .wrapperTechSection {
   padding: $space-xl * 2 0;
-  background: $color-gray-50;
+  background: var(--bg-secondary); // Using theme variable
 }
 
 .wrapperTechGrid {
@@ -807,11 +824,12 @@
 }
 
 .wrapperTechCard {
-  background: $color-white;
+  background: var(--card-bg); // Using theme variable
   padding: $space-lg;
   border-radius: 16px;
-  border: 1px solid $color-gray-200;
+  border: 1px solid var(--border-color); // Using theme variable
   transition: all 0.3s ease;
+  box-shadow: 0 5px 20px -5px var(--shadow-color); // Using theme variable
 
   &:hover {
     transform: translateY(-5px);
@@ -822,7 +840,7 @@
 .wrapperTechCategory {
   font-size: 1rem;
   font-weight: 600;
-  color: $color-gray-900;
+  color: var(--text-primary); // Using theme variable
   margin-bottom: $space-sm;
   padding-bottom: $space-xs;
   border-bottom: 2px solid rgba($primary, 0.2);
@@ -836,17 +854,17 @@
 
 .wrapperTechItem {
   font-size: 0.8rem;
-  color: $color-gray-600;
-  background: $color-gray-50;
+  color: $white; // Using theme variable
+  background: var(--bg-secondary); // Using theme variable
   padding: 2px $space-xs;
   border-radius: 20px;
-  border: 1px solid $color-gray-200;
+  border: 1px solid var(--border-color); // Using theme variable
 }
 
 // Portfolio
 .wrapperPortfolioSection {
   padding: $space-xl * 2 0;
-  background: $color-white;
+  background: var(--bg-secondary); // Using theme variable
 }
 
 .wrapperPortfolioGrid {
@@ -864,16 +882,17 @@
 }
 
 .wrapperPortfolioCard {
-  background: $color-white;
+  background: var(--card-bg); // Using theme variable
   border-radius: 20px;
-  border: 1px solid $color-gray-200;
+  border: 1px solid var(--border-color); // Using theme variable
   overflow: hidden;
   transition: all 0.3s ease;
+  box-shadow: 0 5px 20px -5px var(--shadow-color); // Using theme variable
 
   &:hover {
     transform: translateY(-5px);
     border-color: $primary;
-    box-shadow: 0 20px 40px -10px rgba($primary, 0.1);
+    box-shadow: 0 20px 40px -10px var(--shadow-color); // Using theme variable
 
     .wrapperPortfolioImage {
       transform: scale(1.1);
@@ -898,7 +917,7 @@
 .wrapperPortfolioName {
   font-size: 1.1rem;
   font-weight: 600;
-  color: $color-gray-900;
+  color: var(--text-primary); // Using theme variable
   margin-bottom: 4px;
 }
 
@@ -914,14 +933,14 @@
 
 .wrapperPortfolioDescription {
   font-size: 0.9rem;
-  color: $color-gray-600;
+  color: var(--text-secondary); // Using theme variable
   line-height: 1.5;
 }
 
 // FAQ
 .wrapperFaqSection {
   padding: $space-xl * 2 0;
-  background: $color-gray-50;
+  background: var(--bg-secondary); // Using theme variable
 }
 
 .wrapperFaqGrid {
@@ -935,11 +954,12 @@
 }
 
 .wrapperFaqItem {
-  background: $color-white;
+  background: var(--card-bg); // Using theme variable
   padding: $space-lg;
   border-radius: 16px;
-  border: 1px solid $color-gray-200;
+  border: 1px solid var(--border-color); // Using theme variable
   transition: all 0.3s ease;
+  box-shadow: 0 5px 20px -5px var(--shadow-color); // Using theme variable
 
   &:hover {
     transform: translateY(-5px);
@@ -950,20 +970,20 @@
 .wrapperFaqQuestion {
   font-size: 1rem;
   font-weight: 600;
-  color: $color-gray-900;
+  color: var(--text-primary); // Using theme variable
   margin-bottom: $space-xs;
 }
 
 .wrapperFaqAnswer {
   font-size: 0.9rem;
-  color: $color-gray-600;
+  color: var(--text-secondary); // Using theme variable
   line-height: 1.5;
 }
 
 // CTA
 .wrapperCtaSection {
   padding: $space-xl * 2 0;
-  background: $color-white;
+  background: var(--bg-secondary); // Using theme variable
 }
 
 .wrapperCtaCard {
@@ -980,6 +1000,7 @@
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: $space-sm;
+  color: $color-white;
 }
 
 .wrapperCtaText {
@@ -1046,5 +1067,33 @@
     border-color: $color-white;
     transform: translateY(-3px);
     background: rgba($color-white, 0.1);
+  }
+}
+
+// Dark theme specific adjustments
+.dark-theme {
+  .wrapperHeroStat,
+  .wrapperPlatformCard,
+  .wrapperFeatureCategory,
+  .wrapperProcessCard,
+  .wrapperWhyCard,
+  .wrapperTechCard,
+  .wrapperPortfolioCard,
+  .wrapperFaqItem {
+    background: var(--card-bg);
+  }
+
+  .wrapperPlatformStats,
+  .wrapperBestForTag,
+  .wrapperTechItem {
+    background: var(--bg-secondary);
+  }
+
+  .wrapperComparisonTable {
+    background: var(--card-bg);
+  }
+
+  .wrapperComparisonHeader {
+    background: var(--bg-secondary);
   }
 }

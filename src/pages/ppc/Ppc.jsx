@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import styles from './Ppc.module.scss';
+import { Link } from 'react-router-dom';
 
 const PPCAdsPage = () => {
   const sectionRef = useRef(null);
@@ -294,14 +295,6 @@ const PPCAdsPage = () => {
                 ))}
               </div>
 
-              <div className={styles.wrapperHeroButtons}>
-                <button className={styles.wrapperPrimaryButton}>
-                  Get Your Free Audit
-                  <svg viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </button>
-              </div>
             </div>
             <div className={styles.wrapperHeroImage}>
               <div className={styles.wrapperImageCircle}>
@@ -516,21 +509,7 @@ const PPCAdsPage = () => {
         </div>
       </section>
 
-      {/* Simple CTA */}
-      <section className={styles.wrapperCtaSection}>
-        <div className={styles.wrapperContainer}>
-          <div className={styles.wrapperCtaCard}>
-            <h2 className={styles.wrapperCtaTitle}>Ready to start?</h2>
-            <p className={styles.wrapperCtaText}>Get a free PPC audit and strategy proposal.</p>
-            <button className={styles.wrapperCtaButton}>
-              Get Started
-              <svg viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </section>
+      
     </div>
   );
 };

@@ -12,10 +12,13 @@ import PPCAdsPage from './pages/ppc/Ppc.jsx';
 import BingAdsPage from './pages/paid-ads/PaidAds.jsx';
 import ContactForm from './components/contactForm/ContactForm.jsx';
 import WebDevelopmentPage from './pages/web-development/WebDevelopment.jsx';
+import { ThemeProvider } from './context/ThemeContext.jsx';
 
 function App() {
   return (
     <>
+    <ThemeProvider>
+
       <TopPanel />
       <BrowserRouter>
         <Navbar />
@@ -24,7 +27,7 @@ function App() {
             <Route path="/" element={<Home />} />
           </Routes>
           <Routes>
-            <Route path="/about-us" element={<WhoAreWeSection />} />
+            <Route path="/about" element={<WhoAreWeSection />} />
           </Routes>
           <Routes>
             <Route path="/social-media-marketing" element={<OrganicSocialMediaPage />} />
@@ -44,6 +47,7 @@ function App() {
         </div>
         <Footer />
       </BrowserRouter>
+    </ThemeProvider>
     </>
   );
 }
