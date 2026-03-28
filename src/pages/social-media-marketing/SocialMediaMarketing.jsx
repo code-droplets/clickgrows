@@ -542,24 +542,6 @@ const OrganicSocialMediaPage = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className={styles.wrapperCtaSection}>
-        <div className={styles.wrapperContainer}>
-          <div className={styles.wrapperCtaCard}>
-            <h2 className={styles.wrapperCtaTitle}>Ready to Build Your Organic Presence?</h2>
-            <p className={styles.wrapperCtaText}>
-              Let's create a custom organic social media strategy that authentically connects with your audience and drives real business results.
-            </p>
-            <div className={styles.wrapperCtaButtons}>
-              <Link to="/contact-us">
-                <button className={styles.wrapperCtaSecondary}>
-                  Talk to an Expert
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
