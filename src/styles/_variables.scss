@@ -1,9 +1,9 @@
 // -----------------------------
 // COLOR VARIABLES
 // -----------------------------
-$primary: #2dcf59;   // Light brown
-$secondary: #23a646; // Darker brown
-$tertiary: #2559ae;   // Light brown
+$primary: #a3c2f4;   // Light brown
+$secondary: #90B8F8; // Darker brown
+$tertiary: #5F85DB;   // Light brown
 $success: #22c55e;
 $warning: #facc15;
 $error: #ef4444;
@@ -81,8 +81,10 @@ $container-width: 100%;
 }
 
 .dark-theme {
-  --bg-primary: linear-gradient(135deg, #{$color-gray-900} 0%, #{$color-gray-800} 100%);
-  --bg-secondary: #{$color-gray-800};
+  // --bg-primary: linear-gradient(135deg, #{$color-gray-900} 0%, #{$color-gray-800} 100%);
+  --bg-primary: #353941;
+  // --bg-secondary: #{$color-gray-800};
+  --bg-secondary: #353941;
   --text-primary: #{$color-gray-50};
   --text-secondary: #{$color-gray-100};
   --text-tertiary: #{$color-gray-50};
@@ -98,6 +100,7 @@ $container-width: 100%;
   --cta-gradient: linear-gradient(135deg, #{$tertiary} 0%, #{$secondary} 100%);
   --arrow-filter: brightness(0) invert(1);
   --body-bg: #{$bg-dark};
-  --card-bg: #{$color-gray-800};
+  // --card-bg: #{$color-gray-800};
+  --card-bg: #26282B;
   --cta-bg: linear-gradient(135deg, #{$bg-light} 0%, #{$primary} 100%);
 }
