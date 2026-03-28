@@ -95,7 +95,7 @@ $container-width: 100%;
   --shadow-color: rgba(0, 0, 0, 0.3);
   --gradient-start: #{$color-primary};
   --gradient-end: #{$color-primary-dark};
-  --cta-gradient: linear-gradient(135deg, #{$color-primary} 0%, #{$color-primary-dark} 100%);
+  --cta-gradient: linear-gradient(135deg, #{$tertiary} 0%, #{$secondary} 100%);
   --arrow-filter: brightness(0) invert(1);
   --body-bg: #{$bg-dark};
   --card-bg: #{$color-gray-800};

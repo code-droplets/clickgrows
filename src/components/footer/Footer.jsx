@@ -51,7 +51,7 @@ const Footer = () => {
   const contactInfo = {
     email: 'clickgrows1@gmail.com',
     phone: '+91 7065887777',
-    address: '123 Innovation Street, San Francisco, CA 94105',
+    address: 'Plot B-24 U G/F Kh No105/7 Gali No 6 , Raja Puri Uttam Nagar Near Pathak Clinic New Delhi -110059',
     hours: 'Mon - Fri: 9:00 AM - 9:00 PM IST',
   };
 

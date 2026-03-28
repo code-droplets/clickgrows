@@ -286,10 +286,10 @@
   color: $primary;
   line-height: 1;
 
-  .primary & { color: $color-gray-900; }
-  .purple & { color: $color-purple-400; }
-  .orange & { color: $color-orange-400; }
-  .teal & { color: $color-teal-400; }
+  .primary & { color: var(--text-primary); }
+  .purple & { color:var(--text-primary); }
+  .orange & { color: var(--text-primary); }
+  .teal & { color: var(--text-primary); }
 
   .dark-theme & {
     color: $primary;

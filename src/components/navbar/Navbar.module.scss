@@ -115,7 +115,7 @@
       left: 50%;
       width: 0;
       height: 2px;
-      background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+      background: $tertiary;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       transform: translateX(-50%);
     }
@@ -134,7 +134,7 @@
     top: 100%;
     left: 0;
     background: var(--dropdown-bg);
-    min-width: 220px;
+    min-width: 250px;
     padding: $space-sm 0;
     border-radius: 12px;
     box-shadow: 0 10px 40px var(--shadow-color);
@@ -159,7 +159,7 @@
         transform: translateY(-50%);
         width: 3px;
         height: 0;
-        background: linear-gradient(180deg, var(--gradient-start), var(--gradient-end));
+        background: $tertiary;
         transition: height 0.3s ease;
       }
 
@@ -215,7 +215,8 @@
     align-items: center;
     gap: $space-xs;
     padding: $space-xs $space-lg;
-    background: linear-gradient(135deg, $tertiary 0%, $secondary 100%);
+    // background: linear-gradient(135deg, $tertiary 0%, $secondary 100%);
+    background: $tertiary;
     color: $color-gray-50;
     text-decoration: none;
     font-weight: 600;
