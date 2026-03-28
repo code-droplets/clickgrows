@@ -24,13 +24,13 @@ function App() {
         <Navbar />
         <div className={style.App}>
           <Routes>
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />} />
           </Routes>
           <Routes>
             <Route path="/about" element={<WhoAreWeSection />} />
           </Routes>
           <Routes>
-            <Route path="/social-media-marketing" element={<OrganicSocialMediaPage />} />
+            <Route path="/social-media-marketing" element={<OrganicSocialMediaPage />} />``
           </Routes>
           <Routes>
             <Route path="/ppc" element={<PPCAdsPage />} />
