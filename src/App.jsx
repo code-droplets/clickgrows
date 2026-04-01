@@ -13,6 +13,9 @@ import BingAdsPage from './pages/paid-ads/PaidAds.jsx';
 import ContactForm from './components/contactForm/ContactForm.jsx';
 import WebDevelopmentPage from './pages/web-development/WebDevelopment.jsx';
 import { ThemeProvider } from './context/ThemeContext.jsx';
+import ThankYou from './pages/thankyou/Thankyou.jsx';
+import TermsAndConditions from './pages/term-and-condition/TermAndCondition.jsx';
+import PrivacyPolicy from './pages/policy/PrivacyPolicy.jsx';
 
 function App() {
   return (
@@ -43,6 +46,15 @@ function App() {
           </Routes>
           <Routes>
             <Route path="/contact-us" element={<ContactForm />} />
+          </Routes>
+          <Routes>
+            <Route path="/thankyou" element={<ThankYou />} />
+          </Routes>
+          <Routes>
+            <Route path="/term-and-condition" element={<TermsAndConditions />} />
+          </Routes>
+          <Routes>
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>
         </div>
         <Footer />

@@ -7,7 +7,7 @@ const WhoAreWeSection = () => {
   const [activeTab, setActiveTab] = useState('story');
 
   const founderStory = {
-    name: 'Nikhil Mishra',
+    name: 'Nikhilesh Mishra',
     role: 'Founder & Performance Marketer',
     story: `Not every journey is planned.
 
@@ -41,7 +41,7 @@ And this is just the beginning.`,
 
     quote: "Marketing is not just about running ads — it's about helping businesses grow with clarity and confidence.",
     image: './about.png',
-    signature: 'Nikhil Mishra'
+    signature: 'Nikhilesh Mishra'
   };
   const missionVision = {
     mission: {

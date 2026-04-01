@@ -279,7 +279,7 @@ const OrganicSocialMediaPage = () => {
         <div className={styles.wrapperContainer}>
           <div className={styles.wrapperHeroContent}>
             <div className={styles.wrapperHeroText}>
-              <span className={styles.wrapperHeroBadge}>Organic Social Media</span>
+              {/* <span className={styles.wrapperHeroBadge}>Organic Social Media</span> */}
               <h1 className={styles.wrapperHeroTitle}>
                 {serviceOverview.title}
               </h1>
@@ -314,7 +314,7 @@ const OrganicSocialMediaPage = () => {
       <section className={styles.wrapperBenefitsSection}>
         <div className={styles.wrapperContainer}>
           <div className={styles.wrapperSectionHeader}>
-            <span className={styles.wrapperSectionSubtitle}>Why Go Organic?</span>
+            {/* <span className={styles.wrapperSectionSubtitle}>Why Go Organic?</span> */}
             <h2 className={styles.wrapperSectionTitle}>Key <span className={styles.wrapperHighlight}>Benefits</span></h2>
             <p className={styles.wrapperSectionDescription}>
               Discover why organic social media is essential for building a sustainable, authentic brand presence.
@@ -383,7 +383,7 @@ const OrganicSocialMediaPage = () => {
       <section className={styles.wrapperContentSection}>
         <div className={styles.wrapperContainer}>
           <div className={styles.wrapperSectionHeader}>
-            <span className={styles.wrapperSectionSubtitle}>Content That Connects</span>
+            {/* <span className={styles.wrapperSectionSubtitle}>Content That Connects</span> */}
             <h2 className={styles.wrapperSectionTitle}>Content <span className={styles.wrapperHighlight}>Categories</span></h2>
             <p className={styles.wrapperSectionDescription}>
               Diverse content types that keep your audience engaged and coming back for more.
@@ -422,7 +422,7 @@ const OrganicSocialMediaPage = () => {
       <section className={styles.wrapperProcessSection}>
         <div className={styles.wrapperContainer}>
           <div className={styles.wrapperSectionHeader}>
-            <span className={styles.wrapperSectionSubtitle}>How We Work</span>
+            {/* <span className={styles.wrapperSectionSubtitle}>How We Work</span> */}
             <h2 className={styles.wrapperSectionTitle}>Our <span className={styles.wrapperHighlight}>Process</span></h2>
             <p className={styles.wrapperSectionDescription}>
               A systematic approach to building and growing your organic social presence.
@@ -458,7 +458,7 @@ const OrganicSocialMediaPage = () => {
       <section className={styles.wrapperPracticesSection}>
         <div className={styles.wrapperContainer}>
           <div className={styles.wrapperSectionHeader}>
-            <span className={styles.wrapperSectionSubtitle}>Expert Insights</span>
+            {/* <span className={styles.wrapperSectionSubtitle}>Expert Insights</span> */}
             <h2 className={styles.wrapperSectionTitle}>Best <span className={styles.wrapperHighlight}>Practices</span></h2>
             <p className={styles.wrapperSectionDescription}>
               Proven strategies and tactics for organic social media success.
@@ -492,7 +492,7 @@ const OrganicSocialMediaPage = () => {
       <section className={styles.wrapperMetricsSection}>
         <div className={styles.wrapperContainer}>
           <div className={styles.wrapperSectionHeader}>
-            <span className={styles.wrapperSectionSubtitle}>Measuring Success</span>
+            {/* <span className={styles.wrapperSectionSubtitle}>Measuring Success</span> */}
             <h2 className={styles.wrapperSectionTitle}>Key <span className={styles.wrapperHighlight}>Metrics</span></h2>
             <p className={styles.wrapperSectionDescription}>
               The numbers that matter most for organic social media performance.
@@ -522,7 +522,7 @@ const OrganicSocialMediaPage = () => {
       <section className={styles.wrapperFaqSection}>
         <div className={styles.wrapperContainer}>
           <div className={styles.wrapperSectionHeader}>
-            <span className={styles.wrapperSectionSubtitle}>Got Questions?</span>
+            {/* <span className={styles.wrapperSectionSubtitle}>Got Questions?</span> */}
             <h2 className={styles.wrapperSectionTitle}>Frequently Asked <span className={styles.wrapperHighlight}>Questions</span></h2>
           </div>
 

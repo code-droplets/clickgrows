@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom"; // Add this import
 import useFormSubmit from "../../hooks/useFormSubmit.js";
 import style from "./ContactForm.module.scss";
 
@@ -27,6 +28,7 @@ const ContactForm = () => {
   const [focusedField, setFocusedField] = useState(null);
   const formRef = useRef(null);
   const { submitForm, status, error, docId, reset } = useFormSubmit();
+  const navigate = useNavigate(); // Add navigate hook
 
   // Animation on mount
   useEffect(() => {
@@ -34,6 +36,23 @@ const ContactForm = () => {
       formRef.current.classList.add(style.visible);
     }
   }, []);
+
+  // Handle redirect after successful submission
+  useEffect(() => {
+    if (status === "success") {
+      // Redirect to thank you page after 2 seconds
+      const timer = setTimeout(() => {
+        navigate("/thankyou", { 
+          state: { 
+            formData: formData,
+            docId: docId 
+          } 
+        });
+      }, 2000);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [status, navigate, formData, docId]);
 
   // ── Validation ──────────────────────────────────────────────────────────────
   const validate = () => {
@@ -104,36 +123,36 @@ const ContactForm = () => {
   const isLoading = status === "loading";
 
   // ── Success Screen ──────────────────────────────────────────────────────────
-  if (status === "success") {
-    return (
-      <div className={style.wrapperFormContainer}>
-        <div className={style.formContainer}>
-          <div className={`${style.formCard} ${style.formCardSuccess} ${style.visible}`}>
-            <div className={style.successState}>
-              <div className={style.successState__icon}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                  <path d="M20 6L9 17L4 12" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
-              <h2 className={style.successState__title}>Submission Successful!</h2>
-              <p className={style.successState__desc}>
-                Your data has been saved to Firestore and synced to Google Sheets.
-              </p>
-              {docId && (
-                <code className={style.successState__ref}>Ref: {docId}</code>
-              )}
-              <button className={style.btnSubmit} onClick={handleReset}>
-                <span>Submit Another</span>
-                <svg viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z" clipRule="evenodd" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  // if (status === "success") {
+  //   return (
+  //     <div className={style.wrapperFormContainer}>
+  //       <div className={style.formContainer}>
+  //         <div className={`${style.formCard} ${style.formCardSuccess} ${style.visible}`}>
+  //           <div className={style.successState}>
+  //             <div className={style.successState__icon}>
+  //               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+  //                 <path d="M20 6L9 17L4 12" strokeLinecap="round" strokeLinejoin="round" />
+  //               </svg>
+  //             </div>
+  //             <h2 className={style.successState__title}>Submission Successful!</h2>
+  //             <p className={style.successState__desc}>
+  //               Your message has been sent successfully. Redirecting to thank you page...
+  //             </p>
+  //             {docId && (
+  //               <code className={style.successState__ref}>Ref: {docId}</code>
+  //             )}
+  //             <button className={style.btnSubmit} onClick={handleReset}>
+  //               <span>Submit Another</span>
+  //               <svg viewBox="0 0 20 20" fill="currentColor">
+  //                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z" clipRule="evenodd" />
+  //               </svg>
+  //             </button>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   // ── Main Form ───────────────────────────────────────────────────────────────
   return (
@@ -147,7 +166,6 @@ const ContactForm = () => {
         </div>
 
         <div className={style.formContainer__header}>
-
           <h1 className={style.formContainer__title}>
             Get In <span>Touch</span>
           </h1>
@@ -166,7 +184,6 @@ const ContactForm = () => {
                   Full Name <span className={style.required}>*</span>
                 </label>
                 <div className={style.field__wrapper}>
-                  <span className={style.field__icon}>👤</span>
                   <input
                     className={`${style.field__input} ${fieldErrors.fullName ? style.hasError : ""}`}
                     type="text"
@@ -192,7 +209,6 @@ const ContactForm = () => {
               <div className={`${style.field} ${focusedField === 'phone' ? style.fieldFocused : ''}`}>
                 <label className={style.field__label}>Phone</label>
                 <div className={style.field__wrapper}>
-                  <span className={style.field__icon}>📞</span>
                   <input
                     className={`${style.field__input} ${fieldErrors.phone ? style.hasError : ""}`}
                     type="tel"
@@ -216,7 +232,6 @@ const ContactForm = () => {
                   Email Address <span className={style.required}>*</span>
                 </label>
                 <div className={style.field__wrapper}>
-                  <span className={style.field__icon}>✉️</span>
                   <input
                     className={`${style.field__input} ${fieldErrors.email ? style.hasError : ""}`}
                     type="email"
@@ -242,7 +257,6 @@ const ContactForm = () => {
               <div className={`${style.field} ${focusedField === 'city' ? style.fieldFocused : ''}`}>
                 <label className={style.field__label}>City</label>
                 <div className={style.field__wrapper}>
-                  <span className={style.field__icon}>🏙️</span>
                   <input
                     className={`${style.field__input} ${fieldErrors.city ? style.hasError : ""}`}
                     type="text"
@@ -265,7 +279,6 @@ const ContactForm = () => {
                   Category <span className={style.required}>*</span>
                 </label>
                 <div className={style.field__wrapper}>
-                  <span className={style.field__icon}>📋</span>
                   <select
                     className={`${style.field__select} ${fieldErrors.category ? style.hasError : ""}`}
                     name="category"
@@ -295,7 +308,6 @@ const ContactForm = () => {
                   Subject <span className={style.required}>*</span>
                 </label>
                 <div className={style.field__wrapper}>
-                  <span className={style.field__icon}>📝</span>
                   <input
                     className={`${style.field__input} ${fieldErrors.subject ? style.hasError : ""}`}
                     type="text"
@@ -325,7 +337,6 @@ const ContactForm = () => {
                 Message <span className={style.required}>*</span>
               </label>
               <div className={style.field__wrapper}>
-                <span className={style.field__icon}>💬</span>
                 <textarea
                   className={`${style.field__textarea} ${fieldErrors.message ? style.hasError : ""}`}
                   name="message"
@@ -350,7 +361,6 @@ const ContactForm = () => {
             {/* Global Error Banner */}
             {status === "error" && error && (
               <div className={style.statusBanner + " " + style.statusBannerError}>
-                <span className={style.statusBannerIcon}>⚠️</span>
                 <div className={style.statusBannerContent}>
                   <strong>Submission Failed</strong>
                   <p>{error}</p>
@@ -380,8 +390,6 @@ const ContactForm = () => {
             </button>
           </form>
         </div>
-
-
       </div>
     </div>
   );

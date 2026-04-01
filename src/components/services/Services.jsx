@@ -162,7 +162,7 @@ const ServicesSection = () => {
                 <svg 
                   className={styles.wrapperButtonArrow} 
                   viewBox="0 0 20 20" 
-                fill="currentColor"
+                fill="#ffffff"
               >
                 <path 
                   fillRule="evenodd" 

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import styles from './PaidAds.module.scss';
-
+import { Link } from 'react-router-dom';
 const BingAdsPage = () => {
   const sectionRef = useRef(null);
   const contentRef = useRef([]);
@@ -316,12 +316,14 @@ const BingAdsPage = () => {
               </div>
 
               <div className={styles.wrapperHeroButtons}>
+                <Link to="/contact-us">
                 <button className={styles.wrapperPrimaryButton}>
                   Get Started with Bing
                   <svg viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
                 </button>
+                </Link>
               </div>
             </div>
             <div className={styles.wrapperHeroImage}>

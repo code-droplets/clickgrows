@@ -9,12 +9,14 @@
   z-index: 1000;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 2px 8px var(--shadow-color);
-  animation: slideDown 0.6s ease-out 0.4s both;
+  // animation: slideDown 0.6s ease-out 0.4s both;
   width: 100%;
   font-family: $font-main;
+  // overflow-x: hidden;
 
   &__light {
-    background: $primary; // Light brown from your variables
+    background: linear-gradient(135deg, $color-gray-900 0%, $color-gray-800 100%);
+
   }
 
   &__dark {
@@ -44,7 +46,7 @@
 
   &__logo {
     flex-shrink: 0;
-    animation: fadeInLeft 0.8s ease-out 0.5s both;
+    // animation: fadeInLeft 0.8s ease-out 0.5s both;
 
     &_link {
       display: block;
@@ -182,13 +184,13 @@
 
     @include respond($breakpoint-lg) {
       display: flex;
-      animation: fadeInRight 0.8s ease-out 0.7s both;
+      // animation: fadeInRight 0.8s ease-out 0.7s both;
     }
   }
 
   &__theme_toggle {
     background: none;
-    border: 2px solid var(--border-color);
+    border: 2px solid $primary;
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -202,7 +204,7 @@
 
     &:hover {
       transform: rotate(15deg);
-      border-color: var(--gradient-start);
+      border-color: $primary;
     }
   }
 
@@ -223,7 +225,7 @@
     font-size: 0.9rem;
     border-radius: 50px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 15px rgba($color-primary, 0.3);
+    box-shadow: 0 4px 15px rgba($primary, 0.3);
     position: relative;
     overflow: hidden;
 
@@ -300,7 +302,7 @@
     }
 
     &:hover span {
-      background: $color-primary;
+      background: $tertiary;
     }
   }
 

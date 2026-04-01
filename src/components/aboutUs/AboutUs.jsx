@@ -27,9 +27,9 @@ const AboutUs = () => {
             </div>
 
             <h1 className={styles.hero__title}>
-              <span className={styles['hero__title--yellow']}>Paid Media & Social Media</span>
+              <span className={styles['hero__title--blue']}>Paid Media & Social Media</span>
               <span className={styles['hero__title--blue']}> Marketing Experts</span>
-              <span className={styles['hero__title--black']}> Focused on Scaling Modern Brands</span>
+              <span className={styles['hero__title--blue']}> Focused on Scaling Modern Brands</span>
             </h1>
 
             <p className={styles.hero__description}>

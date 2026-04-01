@@ -168,13 +168,13 @@ const Navbar = () => {
 
           {/* CTA Button and Theme Toggle */}
           <div className={style.navbar__actions}>
-            <button 
+            {/* <button 
               onClick={toggleTheme}
               className={style.navbar__theme_toggle}
               aria-label="Toggle theme"
             >
               {isDarkMode ? '☀️' : '🌙'}
-            </button>
+            </button> */}
 
             <div className={style.navbar__cta}>
               <a href="/contact-us" className={style.navbar__cta_btn}>
@@ -200,14 +200,14 @@ const Navbar = () => {
         {/* Mobile Menu - All links displayed directly */}
         {isMobileMenuOpen && (
           <div className={style.navbar__mobile_menu} ref={mobileMenuRef}>
-            <div className={style.navbar__mobile_header}>
+            {/* <div className={style.navbar__mobile_header}>
               <button 
                 onClick={toggleTheme}
                 className={style.navbar__mobile_theme_toggle}
               >
                 {isDarkMode ? '☀️ Light Mode' : '🌙 Dark Mode'}
               </button>
-            </div>
+            </div> */}
             <ul className={style.navbar__mobile_list}>
               {/* All service links displayed directly */}
               {mobileLinks.map((link, index) => (

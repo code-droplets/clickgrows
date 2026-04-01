@@ -65,6 +65,7 @@
   padding: $space-xs $space-md;
   border-radius: 100px;
   margin-bottom: $space-md;
+  border: 2px solid $white;
 }
 
 .wrapperHeroTitle {
@@ -141,8 +142,8 @@
   display: inline-flex;
   align-items: center;
   gap: $space-xs;
-  background: $primary;
-  color: $tertiary;
+  background: $tertiary;
+  color: $white;
   border: none;
   padding: $space-md $space-xl;
   font-size: 1rem;

@@ -511,7 +511,7 @@
   align-items: center;
   gap: $space-sm;
   background: $tertiary; // Using theme variable
-  color: var(--card-bg); // Using theme variable
+  color: $white; // Using theme variable
   border: none;
   padding: $space-md $space-xl;
   font-size: 1rem;

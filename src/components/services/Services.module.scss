@@ -368,7 +368,7 @@
   align-items: center;
   gap: $space-sm;
   background: $tertiary; // Using theme variable
-  color: var(--card-bg); // Using theme variable
+  color: $white; // Using theme variable
   border: none;
   padding: $space-md $space-xl;
   font-size: 1rem;
@@ -397,7 +397,7 @@
   width: 18px;
   height: 18px;
   transition: transform 0.3s ease;
-  filter: brightness(0) saturate(100%) invert(30%) sepia(15%) saturate(1000%) hue-rotate(200deg); // This makes arrow match $primary color
+  // filter: brightness(0) saturate(100%) invert(30%) sepia(15%) saturate(1000%) hue-rotate(200deg); // This makes arrow match $primary color
 }
 
 // Animation delays for cards
@@ -440,11 +440,11 @@
     }
   }
 
-  .wrapperButtonArrow {
-    filter: brightness(0) invert(1); // White arrow in dark mode
-  }
+  // .wrapperButtonArrow {
+  //   filter: brightness(0) invert(1); // White arrow in dark mode
+  // }
 
-  .wrapperCtaButton:hover .wrapperButtonArrow {
-    filter: brightness(0) invert(1); // Keep white on hover
-  }
+  // .wrapperCtaButton:hover .wrapperButtonArrow {
+  //   filter: brightness(0) invert(1); // Keep white on hover
+  // }
 }

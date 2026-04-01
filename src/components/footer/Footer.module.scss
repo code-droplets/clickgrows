@@ -285,7 +285,7 @@
   opacity: 0.8;
 
   &:hover {
-    color: $color-gray-900;
+    // color: $color-gray-900;
     opacity: 1;
     transform: translateX(8px);
 
@@ -506,7 +506,7 @@
   right: $space-xl;
   width: 50px;
   height: 50px;
-  background: $primary;
+  background: $tertiary;
   border: none;
   border-radius: 50%;
   display: flex;
@@ -514,7 +514,6 @@
   justify-content: center;
   cursor: pointer;
   color: $color-white;
-  box-shadow: 0 5px 20px rgba($primary, 0.3);
   transition: all 0.3s ease;
   z-index: 100;
   opacity: 0;
@@ -523,7 +522,6 @@
   &:hover {
     background: $secondary;
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba($primary, 0.4);
 
     svg {
       transform: translateY(-2px);

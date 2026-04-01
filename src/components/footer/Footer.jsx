@@ -15,7 +15,7 @@ const Footer = () => {
       // { name: 'Analytics & Reporting', url: '#' },
     ],
     company: [
-      { name: 'About Us', url: '/about-us' },
+      { name: 'About Us', url: '/about' },
       { name: 'Contact Us', url: '/contact-us' },
       // { name: 'Our Team', url: '#' },
       // { name: 'Careers', url: '#' },
@@ -31,8 +31,8 @@ const Footer = () => {
       { name: 'API Documentation', url: '#' },
     ],
     legal: [
-      { name: 'Privacy Policy', url: '#' },
-      { name: 'Terms of Service', url: '#' },
+      { name: 'Privacy Policy', url: '/privacy-policy' },
+      { name: 'Terms of Service', url: '/term-and-condition' },
       // { name: 'Cookie Policy', url: '#' },
       // { name: 'GDPR Compliance', url: '#' },
       // { name: 'Disclaimer', url: '#' },
@@ -40,11 +40,11 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { name: 'LinkedIn', icon: './linkedin.png', url: '#', color: '#0077b5' },
+    // { name: 'LinkedIn', icon: './linkedin.png', url: '#', color: '#0077b5' },
     // { name: 'Twitter', icon: './twitter.png', url: '#', color: '#1da1f2' },
     { name: 'Facebook', icon: './facebook.png', url: '#', color: '#4267b2' },
-    { name: 'Instagram', icon: './instagram.png', url: '#', color: '#e4405f' },
-    { name: 'YouTube', icon: './youtube.png', url: '#', color: '#ff0000' },
+    { name: 'Instagram', icon: './instagram.png', url: 'https://www.instagram.com/click.grows', color: '#e4405f' },
+    // { name: 'YouTube', icon: './youtube.png', url: '#', color: '#ff0000' },
     // { name: 'TikTok', icon: './tiktok.png', url: '#', color: '#000000' },
   ];
 
