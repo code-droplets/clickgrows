@@ -10,19 +10,15 @@ const useFormSubmit = () => {
   const submitForm = async (formData) => {
     setStatus("loading");
     setError(null);
-    console.log("🚀 Submit started", formData);
 
     try {
       // Step 1 — Firestore
       console.log("📦 Saving to Firestore...");
       const id = await saveToFirestore(formData);
-      console.log("✅ Firestore saved. Doc ID:", id);
       setDocId(id);
 
       // Step 2 — Google Sheets
-      console.log("📊 Sending to Google Sheets...");
       await sendToGoogleSheets(formData);
-      console.log("✅ Google Sheets done.");
 
       setStatus("success");
     } catch (err) {

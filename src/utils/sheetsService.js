@@ -1,7 +1,6 @@
 const SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
 
 export const sendToGoogleSheets = async (formData) => {
-  console.log("📊 SCRIPT_URL is:", SCRIPT_URL);
 
   if (!SCRIPT_URL || SCRIPT_URL.includes("YOUR_SCRIPT_ID")) {
     throw new Error("Google Script URL is missing in .env file.");
