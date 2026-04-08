@@ -1,7 +1,8 @@
 {
   "projects": {
-    "default": "clickgrows"
-  }
+    "default": "clickgrows",
+    "clickgrows-client": "clickgrows-5b046"
+  },
+  "targets": {},
+  "etags": {}
 }
-
-
