@@ -258,9 +258,9 @@ const TermsAndConditions = () => {
                   If you have any questions about these Terms, please contact us:
                 </p>
                 <ul className={style.contactList}>
-                  <li><strong>Email:</strong> legal@clickgrows.com</li>
-                  <li><strong>Phone:</strong> +1 (555) 123-4567</li>
-                  <li><strong>Address:</strong> 123 Business Avenue, Suite 100, Wilmington, DE 19801</li>
+                  <li><strong>Email:</strong> clickgrows1@gmail.com</li>
+                  <li><strong>Phone:</strong>+91 7065887777</li>
+                  <li><strong>Address:</strong>Plot B-24 U G/F Kh No105/7 Gali No 6 , Raja Puri Uttam Nagar Near Pathak Clinic New Delhi -110059</li>
                 </ul>
               </section>
 
